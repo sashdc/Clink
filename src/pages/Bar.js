@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-
+import '../styles/bar.css';
 
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -13,12 +13,14 @@ const Bar = () => {
   }, []);
 
   return (
-    <div>
-      <h2>List of Ingredients</h2>
-      <ul>
+    <div className='ingredients'>
+      <h2>What's in your bar?</h2>
+      <ul className='ingredient-grid'>
         {ingredients.map(ingredient => (
-          <li key={ingredient.strIngredient1}>
-            <Link to={`/ingredients/${ingredient.strIngredient1}`}>{ingredient.strIngredient1}</Link>
+          <li className='ingredient' key={ingredient.strIngredient1}>
+            <Link to={`/ingredients/${ingredient.strIngredient1}`}>
+              <img src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`} alt={ingredient.strIngredient1} />
+              {ingredient.strIngredient1}</Link>
           </li>
         ))}
       </ul>

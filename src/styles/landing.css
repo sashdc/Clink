@@ -1,0 +1,54 @@
+.main-splash{
+    background: url(../../public/images/bar.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main-nav{
+    /* background-color: rgba(0,0,0,0.8); */
+    /* position in middle of screen */
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    display: flex; 
+}
+
+.main-tile{
+/* make circle backgroun using local pictures */
+    background: url(../../public/images/bottles.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    text-underline-offset: 0.2em;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 30px 10px rgba(0,0,0,.6);
+    transition: .4s;
+
+}
+
+.main-tile:hover{
+scale: 1.4;
+transition: .4s ease-in-out;
+}

@@ -17,10 +17,13 @@ const CocktailAlpha = () => {
   return (
     <div>
       <h1>Cocktails beginning with {letter}</h1>
-      <ul>
+      {/* back to alphabet list */}
+      <Link to="/list">Back to Alphabet List</Link>
+      <ul className=''>
         {cocktails.map(cocktail => (
            <Link to={`/${cocktail.strDrink}`}>
           <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
+          <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
           </Link>
         ))}
       </ul>

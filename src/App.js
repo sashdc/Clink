@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Random from "./pages/Random";
 // import Layout from "./components/Layout";
-
 import React from "react";
 import Landing from "./pages/Landing";
 import List from "./pages/List";

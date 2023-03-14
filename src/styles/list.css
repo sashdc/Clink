@@ -1,0 +1,59 @@
+.alpha-list{
+/* set background as local image */
+    background: url(../../public/images/bar.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.alpha-grid{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-gap: 10px;
+    padding: 10px;
+    /* move to centre of screen */
+    
+}
+
+.alpha-button{
+    display: inline-block;
+    padding: 12px 12px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    transition: .6s;
+
+}
+
+.alpha-button:hover{
+    color: #ffffff;
+    scale: 1.2 ;
+    background-color: #000000;
+    border-color: #adadad;
+    box-shadow: 0px 0px 30px 10px rgba(0,0,0,.6);
+    transition: .2s;
+}

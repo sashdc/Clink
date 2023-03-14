@@ -47,6 +47,9 @@ const Cocktail = () => {
     <img className = 'drink-image animate__animated animate__jello' src={drink.strDrinkThumb} alt={drink.strDrink}></img>
     <ul className="ingredients">
     <li>{drink.strIngredient1} - {drink.strMeasure1}</li>
+    {/* map over ingredients and render ingredient and measure */}
+  
+    
     {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
     {drink.strIngredient3 ? <li>{drink.strIngredient3} - {drink.strMeasure3}</li> : null}
     {drink.strIngredient4 ? <li>{drink.strIngredient4} - {drink.strMeasure4}</li> : null}

@@ -42,7 +42,7 @@ const Random = () => {
     <h3>{drink.strCategory} ({drink.strAlcoholic})</h3>
     ;
     <img className = 'drink-image animate__animated animate__jello' src={drink.strDrinkThumb} alt={drink.strDrink}></img>
-    <ul className="ingredients">
+    <ul className="card-ingredients">
     <li>{drink.strIngredient1} - {drink.strMeasure1}</li>
     {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
     {drink.strIngredient3 ? <li>{drink.strIngredient3} - {drink.strMeasure3}</li> : null}
