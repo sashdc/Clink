@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Bar = () => {
-  let ingredients = [];
-  const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
-  fetch(apiUrl)
-    .then((res) => res.json())
-    .then(
-      // map over results and extract each item
-      (result) => result.drinks.map((item) => ingredients.push(item.strIngredient1))
-    );
-  console.log(ingredients);
-  return (
-    <div>
-        <h1>Bar Items</h1>
-        <ol>
-      {ingredients.map((reptile) => (
-        <li>{reptile}</li>
-      ))}
-    </ol>
-    </div>
-  );
-};
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [ingredients, setIngredients] = useState([]); 
+     const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
 
+     useEffect(() => {
+        fetch(apiUrl)
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              setIsLoaded(true);
+              setIngredients(result.drinks[0]);
+              console.log(result)
+              console.log(result.drinks[0]);
+            },
+            (error) => {
+              setIsLoaded(true);
+              setError(error);
+            }
+          );
+      }, []);
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      } else if (!isLoaded) {
+        return <div>Loading...</div>;
+      } else {
+        return (
+        <div><div className="drink-card animate__animated animate__jackInTheBox">
+          <a href="/random" > <h2>Random Again</h2>
+    </a>
+    </div>
+    </div>
+        )}}
 export default Bar;

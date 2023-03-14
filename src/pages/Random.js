@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/recipe.css'
 import "animate.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -33,13 +33,15 @@ const Random = () => {
     return <div>Loading...</div>;
   } else {
     return (
-    <div className="drink-card animate__animated animate__jackInTheBox">
+    <div><div className="drink-card animate__animated animate__jackInTheBox">
       <a href="/random" > <h2>Random Again</h2>
 </a>
+<Link to="/"> <h2>Back Home</h2>
+</Link>
     <h1> {drink.strDrink}</h1>
     <h3>{drink.strCategory} ({drink.strAlcoholic})</h3>
     ;
-    <img className = 'drink-image' src={drink.strDrinkThumb} alt={drink.strDrink}></img>
+    <img className = 'drink-image animate__animated animate__jello' src={drink.strDrinkThumb} alt={drink.strDrink}></img>
     <ul className="ingredients">
     <li>{drink.strIngredient1} - {drink.strMeasure1}</li>
     {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
@@ -61,6 +63,7 @@ const Random = () => {
     </ul>
     <h2>{drink.strInstructions}</h2>
 
+    </div>
     </div>
   )}
 }

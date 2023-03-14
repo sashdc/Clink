@@ -9,6 +9,7 @@
     text-align: center;
     background-color: lightcoral;
     padding: 2rem;
+    border: 5px solid rgb(202, 101, 101);
     border-radius: 2rem;
     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
     height: auto;
@@ -26,4 +27,13 @@
 .drink-card img{
     height: 25rem;
     border-radius: 22rem;
+    transition: 1s ;
+    box-shadow: 10px 10px 2rem 20px rgba(0,0,0,0.2);
+}
+
+
+.drink-image:hover{
+    border-radius: 8rem;
+    transition: 0.8s ;
+    box-shadow: 0 0 2rem 0 rgba(0,0,0,0.2);
 }
