@@ -1,37 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+
 
 const Bar = () => {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [ingredients, setIngredients] = useState([]); 
-     const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+  const [ingredients, setIngredients] = useState([]);
 
-     useEffect(() => {
-        fetch(apiUrl)
-          .then((res) => res.json())
-          .then(
-            (result) => {
-              setIsLoaded(true);
-              setIngredients(result.drinks[0]);
-              console.log(result)
-              console.log(result.drinks[0]);
-            },
-            (error) => {
-              setIsLoaded(true);
-              setError(error);
-            }
-          );
-      }, []);
-      if (error) {
-        return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
-        return <div>Loading...</div>;
-      } else {
-        return (
-        <div><div className="drink-card animate__animated animate__jackInTheBox">
-          <a href="/random" > <h2>Random Again</h2>
-    </a>
+  useEffect(() => {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+      .then(response => response.json())
+      .then(data => setIngredients(data.drinks))
+      .catch(error => console.error(error));
+  }, []);
+
+  return (
+    <div>
+      <h2>List of Ingredients</h2>
+      <ul>
+        {ingredients.map(ingredient => (
+          <li key={ingredient.strIngredient1}>
+            <Link to={`/cocktails/${ingredient.strIngredient1}`}>{ingredient.strIngredient1}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
+  );
+}
+
+export default Bar
+
+function CocktailList() {
+  const { ingredient } = useParams();
+  const [cocktails, setCocktails] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+      .then(response => response.json())
+      .then(data => setCocktails(data.drinks))
+      .catch(error => console.error(error));
+  }, [ingredient]);
+
+  return (
+    <div>
+      <h2>List of Cocktails with {ingredient}</h2>
+      <ul>
+        {cocktails.map(cocktail => (
+          <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
+        ))}
+      </ul>
     </div>
-        )}}
-export default Bar;
+  );
+}
+
+export { Bar, CocktailList };
