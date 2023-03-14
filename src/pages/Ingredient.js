@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 
 function Ingredient() {
   const [cocktails, setCocktails] = useState([]);
@@ -21,7 +23,7 @@ function Ingredient() {
       <h1>Cocktails made with {ingredient}</h1>
       <ul>
         {cocktails.map(cocktail => (
-          <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
+         <Link to={`/${cocktail.strDrink}`}> <li key={cocktail.idDrink}>{cocktail.strDrink}</li></Link>
         ))}
       </ul>
     </div>

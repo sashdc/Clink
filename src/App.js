@@ -9,6 +9,7 @@ import Landing from "./pages/Landing";
 import List from "./pages/List";
 import Bar from "./pages/Bar";
 import Ingredient from "./pages/Ingredient";
+import Cocktail from "./pages/Cocktail";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
           <Router>
             <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/cocktails/:ingredient" element={<Ingredient />} />
-
+            <Route path="/ingredients/:ingredient" element={<Ingredient />} />
+            <Route path="/:cocktail" element={<Cocktail />} />
              <Route path="/random" element={<Random />} />
              <Route path="/List" element={<List />} />
              <Route path="/Bar" element={<Bar />} />

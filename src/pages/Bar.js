@@ -18,7 +18,7 @@ const Bar = () => {
       <ul>
         {ingredients.map(ingredient => (
           <li key={ingredient.strIngredient1}>
-            <Link to={`/cocktails/${ingredient.strIngredient1}`}>{ingredient.strIngredient1}</Link>
+            <Link to={`/ingredients/${ingredient.strIngredient1}`}>{ingredient.strIngredient1}</Link>
           </li>
         ))}
       </ul>
