@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+
 
 const List = () => {
+
+
+
   return (
-    <div>list</div>
+    <div>
+      <h1>LIST</h1>
+    </div>
   )
 }
 

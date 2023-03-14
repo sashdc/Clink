@@ -1,0 +1,29 @@
+.drink-card{
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    /* transition: all 0.3s ease-in-out; */
+    text-align: center;
+    background-color: lightcoral;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    height: auto;
+}
+.drink-card h1{
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.ingredients{
+    list-style-type : none;
+    padding: 0;
+}
+
+.drink-card img{
+    height: 25rem;
+    border-radius: 22rem;
+}
