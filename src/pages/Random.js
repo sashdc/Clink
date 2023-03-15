@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/recipe.css'
 import "animate.css";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 
 
@@ -11,6 +12,10 @@ const Random = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [drink, setDrink] = useState();
   const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+  const { cocktail } = useParams();
+
+  const apiUrlR = (`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`);
 
   useEffect(() => {
     fetch(apiUrl)
@@ -33,16 +38,21 @@ const Random = () => {
     return <div>Loading...</div>;
   } else {
     return (
-    <div><div className="drink-card animate__animated animate__jackInTheBox">
+    <div>
+      
+      <div className="recipe-page">
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
+        <div className="drink-card animate__animated animate__jackInTheBox">
+
       <a href="/random" > <h2>Random Again</h2>
 </a>
 
     <h1> {drink.strDrink}</h1>
-    <h3>{drink.strCategory} ({drink.strAlcoholic})</h3>
-    ;
+    <h4>{drink.strCategory} ({drink.strAlcoholic})</h4>
+    
     <img className = 'drink-image animate__animated animate__jello' src={drink.strDrinkThumb} alt={drink.strDrink}></img>
+    <br></br>
     <ul className="card-ingredients">
     <li>{drink.strIngredient1} - {drink.strMeasure1}</li>
     {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
@@ -64,6 +74,7 @@ const Random = () => {
     </ul>
     <h2>{drink.strInstructions}</h2>
 
+    </div>
     </div>
     </div>
   )}

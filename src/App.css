@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&display=swap');
 
 *{
     text-align: center;
@@ -11,6 +11,14 @@
 a{
     text-decoration: none;
     color: white;
+    transition: .4s 
+}
+
+a:hover{
+color: white;
+/* outline the text */
+text-shadow: 1px 1px 0px rgb(255, 3, 3, .7);
+transition: .4s ;
 }
 
 #home-btn{

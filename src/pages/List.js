@@ -8,13 +8,13 @@ const List = () => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
-    <div className="alpha-list">
+    <div className="alpha-list ">
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
       </Link>
-      <div className="alpha-grid">
+      <div className="alpha-grid animate__animated animate__fadeIn">
       {letters.map((letter, index) => (
       <Link to={`/cocktails/${letter}`}>
-      <button className="alpha-button animate__animated animate__headShake" key={index}>{letter}</button>
+      <button className="alpha-button " key={index}>{letter}</button>
       </Link>
       ))}
       </div>

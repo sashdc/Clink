@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/bar.css";
+import "animate.css";
+
 
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -13,13 +15,13 @@ const Bar = () => {
   }, []);
 
   return (
-    <div className="ingredients">
+    <div className="ingredients ">
       <Link to="/">
         {" "}
         <h2 id="home-btn">Back Home</h2>
       </Link>
       <h2>What's in your bar?</h2>
-      <ul className="ingredient-grid">
+      <ul className="ingredient-grid animate__animated animate__fadeIn">
         {ingredients.map((ingredient) => (
           <li className="ingredient" key={ingredient.strIngredient1}>
             <Link to={`/ingredients/${ingredient.strIngredient1}`}>

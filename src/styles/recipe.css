@@ -1,18 +1,32 @@
+.recipe-page{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../public/images/pour.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: fixed; */
+}
+
+
 .drink-card{
     width: 25rem;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
     /* transition: all 0.3s ease-in-out; */
     text-align: center;
-    background-color: lightcoral;
-    padding: 2rem;
-    border: 5px solid rgb(202, 101, 101);
+    background-color: rgb(221, 207, 207);
+    padding: 1rem;
+    border: 5px solid rgb(126, 126, 126);
     border-radius: 2rem;
     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
-    height: auto;
+    height: 100%;
+    margin: 5rem;
 }
 .drink-card h1{
     font-size: 2rem;
@@ -25,10 +39,10 @@
 }
 
 .drink-card img{
-    height: 25rem;
+    height: 22rem;
     border-radius: 22rem;
     transition: 1s ;
-    box-shadow: 10px 10px 2rem 20px rgba(0,0,0,0.2);
+    box-shadow: 4px 6px 2rem 20px rgba(0,0,0,0.2);
 }
 
 
