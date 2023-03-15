@@ -29,7 +29,7 @@
 
 .ingredient{
     /* make circle backgroun using local pictures */
-
+    color: white;
     transition: .4s;
 }
 
@@ -39,5 +39,4 @@ transition: .4s ease-in-out;
 background-color: rgba(0,0,0,0.9);
 /* border: 5px white solid; */
 border-radius: 10%;
-
 }

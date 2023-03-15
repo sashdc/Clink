@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import '../styles/list.css';
+import "animate.css";
+
 
 const List = () => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -12,7 +14,7 @@ const List = () => {
       <div className="alpha-grid">
       {letters.map((letter, index) => (
       <Link to={`/cocktails/${letter}`}>
-      <button className="alpha-button" key={index}>{letter}</button>
+      <button className="alpha-button animate__animated animate__headShake" key={index}>{letter}</button>
       </Link>
       ))}
       </div>

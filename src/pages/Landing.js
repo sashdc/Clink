@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/landing.css";
+import "animate.css";
+
 
 const Landing = () => {
   return (
-    <div className="main-splash">
+    <div className="main-splash animate__animated animate__fadeIn">
       <div className="main-nav">
         <Link to="/random">
           {" "}
