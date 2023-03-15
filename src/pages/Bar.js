@@ -20,7 +20,7 @@ const Bar = () => {
         {" "}
         <h2 id="home-btn">Back Home</h2>
       </Link>
-      <h2>What's in your bar?</h2>
+      <h2 className='section-heading'>What's in your bar?</h2>
       <ul className="ingredient-grid animate__animated animate__fadeIn">
         {ingredients.map((ingredient) => (
           <li className="ingredient" key={ingredient.strIngredient1}>
@@ -55,7 +55,7 @@ function CocktailList() {
 
   return (
     <div>
-      <h2>List of Cocktails with {ingredient}</h2>
+      <h2 className='section-heading'>List of Cocktails with {ingredient}</h2>
       <ul>
         {cocktails.map((cocktail) => (
           <li key={cocktail.idDrink}>{cocktail.strDrink}</li>

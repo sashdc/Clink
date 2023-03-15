@@ -21,6 +21,18 @@ text-shadow: 1px 1px 0px rgb(255, 3, 3, .7);
 transition: .4s ;
 }
 
+.section-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem;
+    color: rgb(241, 241, 241);
+    background-color: rgb(99, 99, 99, .7);
+    width: 40%;
+    margin:2rem auto 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
 #home-btn{
     /* stylish button */
     position: fixed;

@@ -19,7 +19,7 @@ const CocktailAlpha = () => {
     <div className='cocktails'>
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
-      <h1>Cocktails beginning with {letter}</h1>
+      <h1 className='section-heading'>Cocktails beginning with {letter}</h1>
       {/* back to alphabet list */}
       <Link to="/list">Back to Alphabet List</Link>
       <div className=''>
