@@ -14,7 +14,7 @@ const Landing = () => {
                   </Link>
         <Link to="/List">
      
-          <h2 className="main-tile tile-list">List</h2>
+          <h2 className="main-tile tile-list">A-Z</h2>
         </Link>
         <Link to="/Bar">
         

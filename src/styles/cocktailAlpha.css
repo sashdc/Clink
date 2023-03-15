@@ -15,7 +15,10 @@
 }
 
 .cocktail-grid{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
     list-style-type: none;
     /* make half transparent background */
     background-color: rgba(0,0,0,0.8);
@@ -32,6 +35,7 @@
     /* make circle backgroun using local pictures */
 
     transition: .4s;
+    padding: 1rem
 }
 
 .cocktail:hover{

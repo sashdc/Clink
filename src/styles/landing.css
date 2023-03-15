@@ -4,7 +4,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  display: flex;
+    display: flex;
     height: 100%;
     width: 100%;
     position: fixed;

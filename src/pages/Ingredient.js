@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
-
+import '../styles/cocktailAlpha.css';
 
 function Ingredient() {
   const [cocktails, setCocktails] = useState([]);
@@ -19,13 +19,15 @@ function Ingredient() {
   }, []);
 
   return (
-    <div>
+    <div className='cocktails'>
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
       <h1>Cocktails made with {ingredient}</h1>
-      <ul>
+      <ul className='cocktail-grid'>
         {cocktails.map(cocktail => (
-         <Link to={`/${cocktail.strDrink}`}> <li key={cocktail.idDrink}>{cocktail.strDrink}</li></Link>
+          <div className='cocktail'>
+         <Link to={`/${cocktail.strDrink}`}><img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/> <li key={cocktail.idDrink}>{cocktail.strDrink}</li></Link>
+         </div>
         ))}
       </ul>
     </div>

@@ -31,6 +31,7 @@
     /* make circle backgroun using local pictures */
     color: white;
     transition: .4s;
+    padding: .5rem
 }
 
 .ingredient:hover{
