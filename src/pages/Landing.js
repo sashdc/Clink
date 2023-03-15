@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/landing.css";
 import "animate.css";
-
+// import shaker component
 
 const Landing = () => {
   return (
@@ -13,7 +13,6 @@ const Landing = () => {
           <h2 className="main-tile tile-random">Random</h2>
                   </Link>
         <Link to="/List">
-     
           <h2 className="main-tile tile-list">A-Z</h2>
         </Link>
         <Link to="/Bar">

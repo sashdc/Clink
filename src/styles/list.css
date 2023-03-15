@@ -5,7 +5,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  display: flex;
+    display: flex;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -16,12 +16,14 @@
 
 .alpha-grid{
     display: flex;
+    /* flex-wrap: wrap; */
+    /* flex: 1; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
     width: 70%;    
-    height: 50%;
+    height: 40%;
     margin: 10% auto;
     grid-gap: 20px;
     padding: 3rem;

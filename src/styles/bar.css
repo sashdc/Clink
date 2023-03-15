@@ -1,4 +1,4 @@
-.ingredients{
+/* .ingredients{
     background: url(../../public/images/bottles.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,7 +12,8 @@
     top: 0;
     left: 0;
     z-index: -1; */
-}
+
+
 
 .ingredient-grid{
     display: flex;

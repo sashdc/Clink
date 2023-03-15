@@ -4,7 +4,8 @@ import '../styles/recipe.css'
 import "animate.css";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
-
+// import { useHistory } from 'react-router-dom';
+// import Shaker from "../components/Shaker";
 
 
 const Random = () => {
@@ -35,16 +36,17 @@ const Random = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div>
+      </div>;
   } else {
     return (
     <div>
-      
+                <img className="background" src="./images/pour.jpg"/>
+
       <div className="recipe-page">
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
         <div className="drink-card animate__animated animate__jackInTheBox">
-
       <a href="/random" > <h2>Random Again</h2>
 </a>
 

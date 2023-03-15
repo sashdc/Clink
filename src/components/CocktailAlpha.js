@@ -17,6 +17,7 @@ const CocktailAlpha = () => {
 
   return (
     <div className='cocktails'>
+            <img className="background" src="../images/bottles.jpg"/>
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
       <h1 className='section-heading'>Cocktails beginning with {letter}</h1>

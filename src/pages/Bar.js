@@ -15,7 +15,9 @@ const Bar = () => {
   }, []);
 
   return (
-    <div className="ingredients ">
+    <div className="bar ">
+          <img className="background" src="./images/bottles.jpg"/>
+
       <Link to="/">
         {" "}
         <h2 id="home-btn">Back Home</h2>
