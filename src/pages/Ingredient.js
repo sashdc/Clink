@@ -20,6 +20,8 @@ function Ingredient() {
 
   return (
     <div>
+      <Link to="/"> <h2 id="home-btn">Back Home</h2>
+</Link>
       <h1>Cocktails made with {ingredient}</h1>
       <ul>
         {cocktails.map(cocktail => (

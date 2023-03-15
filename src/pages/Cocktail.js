@@ -39,7 +39,7 @@ const Cocktail = () => {
     <div><div className="drink-card animate__animated animate__jackInTheBox">
       <a href="/random" > <h2>Random Again</h2>
 </a>
-<Link to="/"> <h2>Back Home</h2>
+<Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
     <h1> {drink.strDrink}</h1>
     <h3>{drink.strCategory} ({drink.strAlcoholic})</h3>

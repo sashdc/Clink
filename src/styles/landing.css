@@ -51,4 +51,6 @@
 .main-tile:hover{
 scale: 1.4;
 transition: .4s ease-in-out;
+box-shadow: 0px 0px 60px 40px rgba(0,0,0);
+
 }

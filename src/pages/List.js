@@ -7,7 +7,7 @@ const List = () => {
 
   return (
     <div className="alpha-list">
-      <Link to="/"> <h2>Back Home</h2>
+      <Link to="/"> <h2 id="home-btn">Back Home</h2>
       </Link>
       <div className="alpha-grid">
       {letters.map((letter, index) => (

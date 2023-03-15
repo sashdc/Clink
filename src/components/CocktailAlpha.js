@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import '../styles/cocktailAlpha.css';
 
 
 const CocktailAlpha = () => {
@@ -15,18 +16,24 @@ const CocktailAlpha = () => {
   }, []);
 
   return (
-    <div>
+    <div className='cocktails'>
+      <Link to="/"> <h2 id="home-btn">Back Home</h2>
+</Link>
       <h1>Cocktails beginning with {letter}</h1>
       {/* back to alphabet list */}
       <Link to="/list">Back to Alphabet List</Link>
-      <ul className=''>
+      <div className=''>
+      <ul className='cocktail-grid'>
         {cocktails.map(cocktail => (
-           <Link to={`/${cocktail.strDrink}`}>
+           <div className='cocktail'><Link to={`/${cocktail.strDrink}`}>
+            <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
           <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
-          <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
+          
           </Link>
+          </div>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

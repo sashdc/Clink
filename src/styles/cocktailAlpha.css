@@ -1,4 +1,4 @@
-.ingredients{
+.cocktails{
     background: url(../../public/images/bottles.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -14,30 +14,30 @@
     z-index: -1; */
 }
 
-.ingredient-grid{
+.cocktail-grid{
     display: grid;
+    list-style-type: none;
     /* make half transparent background */
     background-color: rgba(0,0,0,0.8);
     border-radius: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    padding: 10px;
+    padding: 20px;
     /* move to centre of screen */
     margin: 3rem 8rem;
     list-style-type: none;
 }
 
-.ingredient{
+.cocktail{
     /* make circle backgroun using local pictures */
 
     transition: .4s;
 }
 
-.ingredient:hover{
+.cocktail:hover{
 scale: 1.4;
 transition: .4s ease-in-out;
 background-color: rgba(0,0,0,0.9);
 /* border: 5px white solid; */
 border-radius: 10%;
-
 }
