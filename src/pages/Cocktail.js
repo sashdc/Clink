@@ -4,6 +4,7 @@ import '../styles/recipe.css'
 import "animate.css";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import Shaker from "../components/Shaker";
 
 
 
@@ -33,7 +34,7 @@ const Cocktail = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Shaker />;
   } else {
     return (
     <div>

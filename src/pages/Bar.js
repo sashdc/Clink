@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/bar.css";
 import "animate.css";
-
+// import shaker component
+import Shaker from "../components/Shaker";
 
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);

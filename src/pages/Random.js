@@ -47,7 +47,7 @@ const Random = () => {
       <Link to="/"> <h2 id="home-btn">Back Home</h2>
 </Link>
         <div className="drink-card animate__animated animate__jackInTheBox">
-      <a href="/random" > <h2>Random Again</h2>
+      <a href="/random" > <h3>Random Again</h3>
 </a>
 
     <h1> {drink.strDrink}</h1>
