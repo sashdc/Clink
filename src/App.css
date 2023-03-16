@@ -21,7 +21,7 @@
 position: fixed;
 top: 0;
 left: 0;
-/* width: 100%; */
+width: 100%;
 height: 100%;
 background-size: cover;
 ;
@@ -66,16 +66,9 @@ transition: .4s ;
         width: 70%;
     }
 
-    /* .background{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        z-index: -1;
-        overflow: hidden
-        } */
+ .background{
+    width: auto;
+ }
 }
 
 @media screen and (max-width: 400px){
