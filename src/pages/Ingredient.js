@@ -28,7 +28,7 @@ function Ingredient() {
 
       <NavTabs />
 
-      <h1 className="section-heading">Cocktails made with {ingredient}</h1>
+      <h1 className="section-heading">Drinks made with {ingredient}</h1>
       <ul className="grid-section">
         {cocktails.map((cocktail) => (
           <div className="grid-item">

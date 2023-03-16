@@ -21,7 +21,7 @@ const CocktailAlpha = () => {
             <img className="background" src="../images/bottles.jpg"/>
             <NavTabs />
 
-      <h1 className='section-heading'>Cocktails beginning with {letter}</h1>
+      <h1 className='section-heading'>Drinks beginning with {letter}</h1>
       {/* back to alphabet list */}
       {/* <Link to="/list">Back to Alphabet List</Link> */}
       <div className=''>

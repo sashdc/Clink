@@ -60,6 +60,6 @@ transition: .4s ;
 @media screen and (max-width: 800px){
     .section-heading{
         /* font-size: 1.5rem; */
-        width: 80%;
+        width: 70%;
     }
 }
