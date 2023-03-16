@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     z-index: -1;
+    overflow: scroll;
 }
 
 .alpha-grid{
@@ -22,7 +23,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    width: 70%;    
+    width: 80%;    
     height: 40%;
     margin: 10% auto;
     grid-gap: 20px;
@@ -65,7 +66,7 @@
     .alpha-grid{
         width: 100%;
         height: auto;
-        margin: 8px;
+        margin: 50px 5px;
         padding: 1rem;
     }
 

@@ -23,8 +23,10 @@ function Ingredient() {
   }, []);
 
   return (
+    <div>
+            <img className="background" src="../images/bottles.jpg" />
+
     <div className="grid-page">
-      <img className="background" src="../images/bottles.jpg" />
 
       <NavTabs />
 
@@ -45,6 +47,7 @@ function Ingredient() {
           </div>
         ))}
       </ul>
+    </div>
     </div>
   );
 }

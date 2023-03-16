@@ -39,6 +39,8 @@ const Cocktail = () => {
   } else {
     return (
     <div>
+              <img className="background" src="./images/pour.jpg" />
+
             <div className="recipe-page">
             <NavTabs />
       <div className="drink-card animate__animated animate__jackInTheBox">

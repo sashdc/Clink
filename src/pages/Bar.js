@@ -18,8 +18,10 @@ const Bar = () => {
   }, []);
 
   return (
+    <div>
+            <img className="background" src="./images/bottles.jpg" />
+
     <div className="grid-page">
-      <img className="background" src="./images/bottles.jpg" />
       <NavTabs />
 
       <h2 className="section-heading">What's in your bar?</h2>
@@ -37,6 +39,7 @@ const Bar = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
