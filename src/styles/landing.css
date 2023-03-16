@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .main-title-text{
@@ -73,7 +73,7 @@
     transition: .4s;
     border: 2px solid rgb(192, 192, 192, .6);
     rotate: -360deg;
-
+    z-index: 200;
 }
 
 
@@ -102,7 +102,7 @@ rotate: 0deg;
 }
 
 .main-tile:active{
-    scale: 1.4;
+scale: 1.4;
 font-weight: bolder;
 transition: .6s ease-in-out;
 /* transform: translateY(-15px); */
@@ -126,6 +126,7 @@ rotate: 0deg;
      
         font-size: 5em;
     }
+    
 
     .main-tile{
         font-size: 1.5em;

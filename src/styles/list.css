@@ -59,3 +59,25 @@
         font-weight: bolder;
 
 }
+
+/* media query for phones */
+@media only screen and (max-width: 800px) {
+    .alpha-grid{
+        width: 100%;
+        height: auto;
+        margin: 8px;
+        padding: 1rem;
+    }
+
+    /* .alpha-list{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-size: cover;
+    } */
+    .alpha-button{
+        font-size: 3rem;
+        padding: 5px ;
+    }
+}
