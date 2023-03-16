@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
 // import Shaker from "../components/Shaker";
-
+import NavTabs from "../components/NavTabs";
 
 const Random = () => {
   const [error, setError] = useState(null);
@@ -44,10 +44,9 @@ const Random = () => {
                 <img className="background" src="./images/pour.jpg"/>
 
       <div className="recipe-page">
-      <Link to="/"> <h2 id="home-btn">Back Home</h2>
-</Link>
-        <div className="drink-card animate__animated animate__jackInTheBox">
-      <Link to="/random" onClick={() => window.location.reload()} > <h3>Random Again</h3>
+ <NavTabs />
+         <div className="drink-card animate__animated animate__jackInTheBox">
+      <Link to="/random" onClick={() => window.location.reload()} > <h3>random again</h3>
 </Link>
 
     <h1> {drink.strDrink}</h1>
@@ -57,7 +56,7 @@ const Random = () => {
     <br></br>
     <ul className="card-ingredients">
     <li>{drink.strIngredient1} - {drink.strMeasure1}</li>
-    {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
+       {drink.strIngredient2 ? <li>{drink.strIngredient2} - {drink.strMeasure2}</li> : null}
     {drink.strIngredient3 ? <li>{drink.strIngredient3} - {drink.strMeasure3}</li> : null}
     {drink.strIngredient4 ? <li>{drink.strIngredient4} - {drink.strMeasure4}</li> : null}
     {drink.strIngredient5 ? <li>{drink.strIngredient5} - {drink.strMeasure5}</li> : null}

@@ -1,17 +1,25 @@
-
+.bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .ingredient-grid{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    width: 80%;
+    list-style-type: none;
     /* make half transparent background */
     background-color: rgba(0,0,0,0.8);
     border-radius: 10px;
-        /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
     /* grid-gap: 10px; */
-    padding: 10px;
+    padding: 20px;
     /* move to centre of screen */
-    margin: 3rem 3rem;
+    margin: auto;
+    margin: 2rem;
     list-style-type: none;
 }
 

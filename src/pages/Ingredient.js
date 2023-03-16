@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "../styles/cocktailAlpha.css";
+// import "../styles/cocktailAlpha.css";
+import '../styles/grid.css'
+import NavTabs from "../components/NavTabs";
 
 function Ingredient() {
   const [cocktails, setCocktails] = useState([]);
@@ -21,17 +23,15 @@ function Ingredient() {
   }, []);
 
   return (
-    <div className="cocktails">
+    <div className="grid-page">
       <img className="background" src="../images/bottles.jpg" />
 
-      <Link to="/">
-        {" "}
-        <h2 id="home-btn">Back Home</h2>
-      </Link>
+      <NavTabs />
+
       <h1 className="section-heading">Cocktails made with {ingredient}</h1>
-      <ul className="cocktail-grid">
+      <ul className="grid-section">
         {cocktails.map((cocktail) => (
-          <div className="cocktail">
+          <div className="grid-item">
             <Link to={`/${cocktail.strDrink}`}>
               <img
                 src={cocktail.strDrinkThumb}
@@ -39,7 +39,8 @@ function Ingredient() {
                 className="rounded"
                 height="200px"
               />{" "}
-                {cocktail.strAlcoholic === "Alcoholic" ? <p className='cocktail-name'>{cocktail.strDrink} (Cocktail)</p> : <p className='cocktail-name'>{cocktail.strDrink} (Mocktail)</p>}
+                {/* {cocktail.strAlcoholic === "Alcoholic" ? <p className='cocktail-name'>{cocktail.strDrink} (Cocktail)</p> : <p className='cocktail-name'>{cocktail.strDrink} (Mocktail)</p>} */}
+                <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
             </Link>
           </div>
         ))}

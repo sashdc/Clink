@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import '../styles/cocktailAlpha.css';
-
+// import '../styles/cocktailAlpha.css';
+import NavTabs from "../components/NavTabs";
+import '../styles/grid.css'
 
 const CocktailAlpha = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -15,26 +16,18 @@ const CocktailAlpha = () => {
       .catch(error => console.log(error));
   }, []);
 
-  // const alcohol =()=> {
-  //   if (cocktail.strAlcoholic === "Alcoholic") {
-  //     return "Alcoholic"
-  //   } else {
-  //     return "Non-Alcoholic"
-  //   }
-  // }
-
   return (
-    <div className='cocktails'>
+    <div className='grid-page'>
             <img className="background" src="../images/bottles.jpg"/>
-      <Link to="/"> <h2 id="home-btn">Back Home</h2>
-</Link>
+            <NavTabs />
+
       <h1 className='section-heading'>Cocktails beginning with {letter}</h1>
       {/* back to alphabet list */}
-      <Link to="/list">Back to Alphabet List</Link>
+      {/* <Link to="/list">Back to Alphabet List</Link> */}
       <div className=''>
-      <ul className='cocktail-grid'>
+      <ul className='grid-section'>
         {cocktails.map(cocktail => (
-           <div className='cocktail'><Link to={`/${cocktail.strDrink}`}>
+           <div className='grid-item'><Link to={`/${cocktail.strDrink}`}>
             <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
             {/* if drnk is alcoholic show coktail, or mocktail if not */}
             {cocktail.strAlcoholic === "Alcoholic" ? <p className='cocktail-name'>{cocktail.strDrink} (Cocktail)</p> : <p className='cocktail-name'>{cocktail.strDrink} (Mocktail)</p>}

@@ -5,6 +5,7 @@ import "animate.css";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import Shaker from "../components/Shaker";
+import NavTabs from "../components/NavTabs";
 
 
 
@@ -39,11 +40,10 @@ const Cocktail = () => {
     return (
     <div>
             <div className="recipe-page">
-            <Link to="/"> <h2 id="home-btn">Back Home</h2>
-</Link>
+            <NavTabs />
       <div className="drink-card animate__animated animate__jackInTheBox">
-      <a href="/random" > <h2>Random Again</h2>
-</a>
+      {/* <a href="/random" > <h2>Random Again</h2>
+</a> */}
 
     <h1> {drink.strDrink}</h1>
     <h3>{drink.strCategory} ({drink.strAlcoholic})</h3>

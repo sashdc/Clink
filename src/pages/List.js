@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import '../styles/list.css';
 import "animate.css";
+import NavTabs from "../components/NavTabs";
 
 
 const List = () => {
@@ -9,8 +10,8 @@ const List = () => {
 
   return (
     <div className="alpha-list ">
-      <Link to="/"> <h2 id="home-btn">Back Home</h2>
-      </Link>
+  <NavTabs />
+
       <div className="alpha-grid animate__animated animate__fadeIn">
       {letters.map((letter, index) => (
       <Link to={`/cocktails/${letter}`}>

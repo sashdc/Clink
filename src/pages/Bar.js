@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import "../styles/bar.css";
+// import "../styles/bar.css";
 import "animate.css";
 // import shaker component
 import Shaker from "../components/Shaker";
+import NavTabs from "../components/NavTabs";
+import "../styles/grid.css";
 
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -16,19 +18,17 @@ const Bar = () => {
   }, []);
 
   return (
-    <div className="bar ">
-          <img className="background" src="./images/bottles.jpg"/>
+    <div className="grid-page">
+      <img className="background" src="./images/bottles.jpg" />
+      <NavTabs />
 
-      <Link to="/">
-        {" "}
-        <h2 id="home-btn">Back Home</h2>
-      </Link>
-      <h2 className='section-heading'>What's in your bar?</h2>
-      <ul className="ingredient-grid animate__animated animate__fadeIn">
+      <h2 className="section-heading">What's in your bar?</h2>
+      <ul className="grid-section animate__animated animate__fadeIn">
         {ingredients.map((ingredient) => (
-          <li className="ingredient" key={ingredient.strIngredient1}>
+          <li className="grid-item" key={ingredient.strIngredient1}>
             <Link to={`/ingredients/${ingredient.strIngredient1}`}>
-              <img className="ingredient-img"
+              <img
+                className="ingredient-img"
                 src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`}
                 alt={ingredient.strIngredient1}
               />
@@ -58,7 +58,7 @@ function CocktailList() {
 
   return (
     <div>
-      <h2 className='section-heading'>List of Cocktails with {ingredient}</h2>
+      <h2 className="section-heading">List of Cocktails with {ingredient}</h2>
       <ul>
         {cocktails.map((cocktail) => (
           <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
