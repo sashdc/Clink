@@ -15,6 +15,14 @@ const CocktailAlpha = () => {
       .catch(error => console.log(error));
   }, []);
 
+  // const alcohol =()=> {
+  //   if (cocktail.strAlcoholic === "Alcoholic") {
+  //     return "Alcoholic"
+  //   } else {
+  //     return "Non-Alcoholic"
+  //   }
+  // }
+
   return (
     <div className='cocktails'>
             <img className="background" src="../images/bottles.jpg"/>
@@ -28,7 +36,9 @@ const CocktailAlpha = () => {
         {cocktails.map(cocktail => (
            <div className='cocktail'><Link to={`/${cocktail.strDrink}`}>
             <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
-          <li key={cocktail.idDrink}>{cocktail.strDrink}</li>
+            {/* if drnk is alcoholic show coktail, or mocktail if not */}
+            {cocktail.strAlcoholic === "Alcoholic" ? <p className='cocktail-name'>{cocktail.strDrink} (Cocktail)</p> : <p className='cocktail-name'>{cocktail.strDrink} (Mocktail)</p>}
+          {/* <li key={cocktail.idDrink}>{cocktail.strDrink}({cocktail.strAlcoholic})</li> */}
           
           </Link>
           </div>

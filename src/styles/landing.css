@@ -22,7 +22,7 @@
     font-weight: bold;
     text-shadow: 0px 0px 51px rgba(0,0,0,0.8);
     /* add animation for logo */
-    animation: alternate 3s ease-in-out infinite alternate;
+    animation: clink 2s ease-in-out infinite alternate;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -77,7 +77,7 @@
 }
 
 
-@keyframes alternate {
+@keyframes clink {
     0% {
         letter-spacing: -.5rem;  
         color: rgb(238, 238, 238);
