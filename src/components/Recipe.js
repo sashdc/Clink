@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const Recipe = () => {
 
@@ -12,9 +12,9 @@ const Recipe = () => {
   const [drink, setDrink] = useState();
   const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-  const { cocktail } = useParams();
+  // const { cocktail } = useParams();
 
-  const apiUrlR = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+  // const apiUrlR = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
 
   useEffect(() => {
     fetch(apiUrl)

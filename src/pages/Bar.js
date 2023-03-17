@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 // import "../styles/bar.css";
 import "animate.css";
 // import shaker component
-import Shaker from "../components/Shaker";
+// import Shaker from "../components/Shaker";
 import NavTabs from "../components/NavTabs";
 import "../styles/grid.css";
 
@@ -19,7 +19,7 @@ const Bar = () => {
 
   return (
     <div>
-            <img className="background" src="./images/bottles.jpg" />
+            <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar"/>
 
     <div className="grid-page">
       <NavTabs />

@@ -1,11 +1,11 @@
 // import React from 'react'
-import React, { useState, useEffect } from "react";
+import React from "react";
 import '../styles/recipe.css'
 import "animate.css";
-import { Link } from "react-router-dom";
-import { useParams } from 'react-router-dom';
+// import { Link } from "react-router-dom";
+// import { useParams } from 'react-router-dom';
 import Recipe from "../components/Recipe";
-import Shaker from "../components/Shaker";
+// import Shaker from "../components/Shaker";
 import NavTabs from "../components/NavTabs";
 
 
@@ -14,7 +14,7 @@ const Cocktail = () => {
 
     return (
     <div>
-              <img className="background" src="./images/pour.jpg" />
+              <img className="background" src="./images/pour.jpg" alt="a drink being poured at a bar" />
 
             <NavTabs />
             <Recipe />

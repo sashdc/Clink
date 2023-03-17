@@ -20,11 +20,11 @@ function Ingredient() {
     }
 
     fetchCocktails();
-  }, []);
+  }, [ingredient]);
 
   return (
     <div>
-            <img className="background" src="../images/bottles.jpg" />
+            <img className="background" src="../images/bottles.jpg" alt="bottles behind a bar"/>
 
     <div className="grid-page">
 

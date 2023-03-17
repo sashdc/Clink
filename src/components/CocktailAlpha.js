@@ -14,16 +14,15 @@ const CocktailAlpha = () => {
       .then(response => response.json())
       .then(data => setCocktails(data.drinks))
       .catch(error => console.log(error));
-  }, []);
+  }, [letter]);
 
   return (
     <div className='grid-page'>
-            <img className="background" src="../images/bottles.jpg"/>
+            <img className="background" src="../images/bottles.jpg" alt='bottles in a bar'/>
             <NavTabs />
 
       <h1 className='section-heading'>Drinks beginning with {letter}</h1>
-      {/* back to alphabet list */}
-      {/* <Link to="/list">Back to Alphabet List</Link> */}
+
       <div className=''>
       <ul className='grid-section'>
         {cocktails.map(cocktail => (
