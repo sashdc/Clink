@@ -35,9 +35,10 @@ On landing, the user is given the choice of Random, A-Z, or Bar. Once in the lat
 
  ## Credits
 
-Cherian, Saharsh
+[Cherian, Saharsh](https://github.com/sashdc)
+
 [The Cocktail DB](https://www.thecocktaildb.com/)
 
 
-[Creator Github](https://github.com/sashdc)
+
 
