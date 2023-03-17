@@ -1,4 +1,4 @@
-#  Clink
+#  Clink - Find your drink
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ On landing, the user is given the choice of Random, A-Z, or Bar. Once in the lat
 - 3rd Party API
 
 
-![Screenshot of full working page](./src/assets/images/site-screenshot.jpg "Portfolio Page Screenshot")
+![Screenshot of full working page](./src/assets/images/site-screenshot.jpg "Clink Screenshot")
 
 ### Links
 

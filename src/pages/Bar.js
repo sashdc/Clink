@@ -25,9 +25,9 @@ const Bar = () => {
       <NavTabs />
 
       <h2 className="section-heading">What's in your bar?</h2>
-      <ul className="grid-section animate__animated animate__fadeIn">
+      <ul className="grid-section ">
         {ingredients.map((ingredient) => (
-          <li className="grid-item" key={ingredient.strIngredient1}>
+          <li className="grid-item animate__animated animate__bounceIn" key={ingredient.strIngredient1}>
             <Link to={`/ingredients/${ingredient.strIngredient1}`}>
               <img
                 className="ingredient-img"

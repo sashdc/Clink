@@ -33,7 +33,7 @@ function Ingredient() {
       <h1 className="section-heading">Drinks made with {ingredient}</h1>
       <ul className="grid-section">
         {cocktails.map((cocktail) => (
-          <div className="grid-item">
+          <div className="grid-item animate__bounceIn">
             <Link to={`/${cocktail.strDrink}`}>
               <img
                 src={cocktail.strDrinkThumb}

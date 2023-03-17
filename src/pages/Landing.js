@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/landing.css";
-import "animate.css";
 // import shaker component
 import clinkSound from "../assets/clinksound.mp3";
 
