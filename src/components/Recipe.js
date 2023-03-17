@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Recipe = () => {
-
+     const { cocktail } = useParams();
     const location = useLocation();
     const page = location.pathname;
-    
+    let apiUrl
+
     const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [drink, setDrink] = useState();
-  const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+  if (page === "/Random") { apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";}
+  else {apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;}
 
   // const { cocktail } = useParams();
 
