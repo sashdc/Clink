@@ -13,7 +13,8 @@ const Landing = () => {
 
   return (
     <div className="main-splash animate__animated animate__fadeIn">
- 
+             {/* <img className="background" src="./images/bar.jpg" /> */}
+
      
       <div className="main-nav">
         <Link to="/Random" onClick={playSound} >

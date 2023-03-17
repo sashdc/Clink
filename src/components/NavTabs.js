@@ -5,7 +5,6 @@ import "../styles/navtabs.css";
 const NavTabs = () => {
   const location = useLocation();
   const page = location.pathname;
-  console.log(location);
 
   return (
     <div className="navtabs">
