@@ -140,7 +140,7 @@ rotate: 0deg;
     .main-splash{
     flex-direction: column-reverse;
 position: relative;
-
+overflow: hidden;
     height: 100vh;
     }   
 }
