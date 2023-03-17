@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import "animate.css";
 
 import Random from "./pages/Random";
 // import Layout from "./components/Layout";
