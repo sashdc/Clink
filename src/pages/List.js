@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/list.css';
 import "animate.css";
 import NavTabs from "../components/NavTabs";
+import Search from "../components/Search";
 
 
 const List = () => {
@@ -11,7 +12,7 @@ const List = () => {
   return (
     <div className="alpha-list ">
   <NavTabs />
-
+  <Search />
       <div className="alpha-grid animate__animated animate__fadeIn">
       {letters.map((letter, index) => (
       <Link to={`/cocktails/${letter}`}>

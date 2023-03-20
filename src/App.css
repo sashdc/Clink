@@ -55,7 +55,17 @@ transition: .4s ;
     border-radius: 1rem 1rem 0 0 ;
 }
 
-
+.no-result{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+    color: rgb(241, 241, 241);
+    background-color: rgba(0,0,0,0.9);
+     width: 40%;
+    margin:2rem auto 0 auto;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0 ;
+}
 
 
 

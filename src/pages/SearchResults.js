@@ -6,28 +6,34 @@ import NavTabs from "../components/NavTabs";
 import '../styles/grid.css'
 import Search from "../components/Search";
 
-const CocktailAlpha = () => {
+const SearchResults = () => {
   const [cocktails, setCocktails] = useState([]);
-  const { letter } = useParams();
-
+  const { searchTerm } = useParams();
+  
   useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
-      .then(response => response.json())
-      .then(data => setCocktails(data.drinks))
-      .catch(error => console.log(error));
-  }, [letter]);
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
+      .then((response) => response.json())
+      .then((data) => setCocktails(data.drinks))
+      .catch((error) => console.error(error));
+  }, [searchTerm]);
+
+console.log(cocktails)
 
   return (
+ 
     <div className='grid-page'>
             <img className="background" src="../images/bottles.jpg" alt='bottles in a bar'/>
             <NavTabs />
             <Search />
 
-      <h1 className='section-heading'>Drinks beginning with {letter}</h1>
+      <h1 className='section-heading'>{searchTerm} search results</h1>
 
       <div className=''>
+        {/* return section if cocktails hs data but not if null */}
+{cocktails ?
       <ul className='grid-section'>
-        {cocktails.map(cocktail => (
+       
+       {cocktails.map(cocktail => (
            <div className='grid-item animate__animated animate__bounceIn'><Link to={`/${cocktail.strDrink}`}>
             <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
             {/* if drnk is alcoholic show coktail, or mocktail if not */}
@@ -38,9 +44,16 @@ const CocktailAlpha = () => {
           </div>
         ))}
       </ul>
+      :
+      <div className='grid-section w-100 no-result'> No results found for {searchTerm}. Please
+        try searching again with a different term
+        
+        
+        </div>}
       </div>
     </div>
+    
   );
 }
 
-export default CocktailAlpha
+export default SearchResults
