@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/landing.css";
 // import shaker component
 import clinkSound from "../assets/clinksound.mp3";
+import Search from "../components/Search";
 
 const Landing = () => {
   const playSound = () => {
@@ -14,7 +15,9 @@ const Landing = () => {
     <div className="main-splash animate__animated animate__fadeIn">
              {/* <img className="background" src="./images/bar.jpg" /> */}
 
-     
+     {/* search bar */}
+
+        
       <div className="main-nav">
         <Link to="/Random" onClick={playSound} >
           
@@ -28,6 +31,7 @@ const Landing = () => {
           <h2 className="main-tile tile-bar">Bar</h2>
         </Link>
       </div>
+      <Search />
       <div className="main-title">
         <h1 className="main-title-text">CLiNK</h1>
       </div>

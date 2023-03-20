@@ -14,10 +14,7 @@ const Recipe = () => {
   if (page === "/Random") { apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";}
   else {apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;}
 
-  // const { cocktail } = useParams();
-
-  // const apiUrlR = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
-
+ 
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
