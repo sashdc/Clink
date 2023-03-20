@@ -49,7 +49,7 @@
 
 .drink-image:hover{
     border-radius: 8rem;
-    transition: 0.8s ;
+    transition: 0.4s ;
     box-shadow: 0 0 2rem 0 rgba(0,0,0,0.2);
 }
 

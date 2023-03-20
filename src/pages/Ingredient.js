@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 // import "../styles/cocktailAlpha.css";
 import '../styles/grid.css'
 import NavTabs from "../components/NavTabs";
+import Search from "../components/Search";
+
 
 function Ingredient() {
   const [cocktails, setCocktails] = useState([]);
@@ -29,7 +31,7 @@ function Ingredient() {
     <div className="grid-page">
 
       <NavTabs />
-
+      <Search />
       <h1 className="section-heading">Drinks made with {ingredient}</h1>
       <ul className="grid-section">
         {cocktails.map((cocktail) => (

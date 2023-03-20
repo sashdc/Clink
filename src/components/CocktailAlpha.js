@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import '../styles/cocktailAlpha.css';
 import NavTabs from "../components/NavTabs";
 import '../styles/grid.css'
+import Search from "../components/Search";
 
 const CocktailAlpha = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -20,6 +21,7 @@ const CocktailAlpha = () => {
     <div className='grid-page'>
             <img className="background" src="../images/bottles.jpg" alt='bottles in a bar'/>
             <NavTabs />
+            <Search />
 
       <h1 className='section-heading'>Drinks beginning with {letter}</h1>
 

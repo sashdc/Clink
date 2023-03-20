@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import '../styles/cocktailAlpha.css';
 import NavTabs from "../components/NavTabs";
 import '../styles/grid.css'
+import Search from "../components/Search";
 
 const SearchResults = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -14,17 +15,22 @@ const SearchResults = () => {
       .then((response) => response.json())
       .then((data) => setCocktails(data.drinks))
       .catch((error) => console.error(error));
-  }, []);
+  }, [searchTerm]);
 
 console.log(cocktails)
+
   return (
+ 
     <div className='grid-page'>
             <img className="background" src="../images/bottles.jpg" alt='bottles in a bar'/>
             <NavTabs />
+            <Search />
 
       <h1 className='section-heading'>{searchTerm} search results</h1>
 
       <div className=''>
+        {/* return section if cocktails hs data but not if null */}
+{cocktails ?
       <ul className='grid-section'>
        
        {cocktails.map(cocktail => (
@@ -38,8 +44,15 @@ console.log(cocktails)
           </div>
         ))}
       </ul>
+      :
+      <div className='grid-section w-100 no-result'> No results found for {searchTerm}. Please
+        try searching again with a different term
+        
+        
+        </div>}
       </div>
     </div>
+    
   );
 }
 

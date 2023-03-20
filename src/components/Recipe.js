@@ -46,9 +46,9 @@ const Recipe = () => {
                         
 
             <h1> {drink.strDrink}</h1>
-            <h4>
+            <h5>
               {drink.strCategory} ({drink.strAlcoholic})
-            </h4>
+            </h5>
 
             <img
               className="drink-image animate__animated animate__jello"
@@ -136,7 +136,7 @@ const Recipe = () => {
                 </li>
               ) : null}
             </ul>
-            <h2>{drink.strInstructions}</h2>
+            <h4>{drink.strInstructions}</h4>
           </div>
         </div>
   )

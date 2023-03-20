@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-
+import { Link } from "react-router-dom";
+import "../styles/search.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Search = () => {
@@ -10,24 +12,29 @@ const [searchTerm, setSearchTerm] = useState('');
     setSearchTerm(event.target.value);
   }
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    const searchUrl = `/search/${searchTerm}`
-    window.open(searchUrl);
-  }
+//   function handleFormSubmit(event) {
+//     event.preventDefault();
+//     const searchUrl = `/search/${searchTerm}`
+//     window.open(searchUrl);
+//   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+<div className='search-cont'>
+    
+    <form className='search-form' >
       <label htmlFor="search"></label>
       <input
+      className='search-input'
         id="search"
         type="text"
         value={searchTerm}
-        placeholder="Search for a cocktail"
+        placeholder="Search for a drink"
         onChange={handleInputChange}
       />
-      <button type="submit">Search</button>
+     <Link to={`/search/${searchTerm}`}> <button type="submit" className='search-button'>
+     <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />      </button></Link>
     </form>
+    </div>
   );
 }
 

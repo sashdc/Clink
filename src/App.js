@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "animate.css";
-// import fontawesom icons
 
 import Random from "./pages/Random";
 // import Layout from "./components/Layout";
@@ -14,6 +13,7 @@ import Cocktail from "./pages/Cocktail";
 import CocktailAlpha from "./components/CocktailAlpha";
 import SearchResults from "./pages/SearchResults";
 
+
 function App() {
   return (
     <div>
@@ -23,6 +23,7 @@ function App() {
           <Route path="/ingredients/:ingredient" element={<Ingredient />} />
           <Route path="/cocktails/:letter" element={<CocktailAlpha />} />
           <Route path="/search/:searchTerm" element={<SearchResults />} />
+          <Route path="/search" element={<SearchResults />} />
 
           <Route path="/:cocktail" element={<Cocktail />} />
           <Route path="/random" element={<Random />} />

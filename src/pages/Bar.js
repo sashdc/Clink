@@ -6,6 +6,8 @@ import "animate.css";
 // import Shaker from "../components/Shaker";
 import NavTabs from "../components/NavTabs";
 import "../styles/grid.css";
+import Search from "../components/Search";
+
 
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -23,7 +25,7 @@ const Bar = () => {
 
     <div className="grid-page">
       <NavTabs />
-
+      <Search />
       <h2 className="section-heading">What's in your bar?</h2>
       <ul className="grid-section ">
         {ingredients.map((ingredient) => (
