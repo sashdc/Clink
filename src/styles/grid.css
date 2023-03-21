@@ -39,6 +39,12 @@
     border-radius: 10%;
     }
     
+    @media screen and (max-width: 600px) {
+.grid-page{
+    margin-top: 3rem;
+
+}
+    }
     @media only screen and (max-width: 800px) {
         .grid-section{
             width: 80%;

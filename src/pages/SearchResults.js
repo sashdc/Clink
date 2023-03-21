@@ -45,7 +45,7 @@ console.log(cocktails)
         ))}
       </ul>
       :
-      <div className='grid-section w-100 no-result'> No results found for {searchTerm}. Please
+      <div className='grid-section  no-result'> No results found for {searchTerm}. Please
         try searching again with a different term
         
         

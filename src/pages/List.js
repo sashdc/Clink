@@ -7,7 +7,8 @@ import Search from "../components/Search";
 
 
 const List = () => {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  // no X
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWYZ".split("");
 
   return (
     <div className="alpha-list ">

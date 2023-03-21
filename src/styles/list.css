@@ -6,6 +6,8 @@
     -o-background-size: cover;
     background-size: cover;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -23,11 +25,11 @@
     align-items: center;
     flex-wrap: wrap;
 
-    width: 80%;    
+    width: 85%;    
     height: 40%;
-    margin: 10% auto;
+    /* margin: 10% auto; */
     grid-gap: 20px;
-    padding: 3rem;
+    /* padding: 3rem; */
     margin-bottom: 10rem;
 }
 
@@ -45,7 +47,7 @@
     color: #333;
     background-color: #d4d4d4;
     border-color: #ccc;
-    transition: .6s;
+    transition: .8s;
 
 }
 
@@ -65,10 +67,10 @@
 @media only screen and (max-width: 800px) {
     .alpha-grid{
         width: 100%;
-        height: auto;
-        margin: 50px 5px;
+        height: 50%;
+        /* margin: 50px 5px; */
         padding: 1rem;
-        margin-bottom: 2rem;
+        /* margin-bottom: 10rem; */
     }
 
     /* .alpha-list{
