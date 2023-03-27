@@ -37,6 +37,7 @@
     background-color: rgba(0,0,0,0.9);
     /* border: 5px white solid; */
     border-radius: 10%;
+    z-index: 200;
     }
     
     @media screen and (max-width: 600px) {
