@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavTabs from "../components/NavTabs";
 import '../styles/grid.css'
 import Search from "../components/Search";
+import IngredientSearch from "../components/IngredientSearch";
 
 const SearchResults = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -26,7 +27,7 @@ console.log(cocktails)
             <NavTabs />
             <Search />
 
-      <h1 className='section-heading'>{searchTerm} search results</h1>
+      <h1 className='section-heading'>Results with {searchTerm} in the name</h1>
 
       <div className=''>
         {/* return section if cocktails hs data but not if null */}
@@ -51,6 +52,8 @@ console.log(cocktails)
         
         </div>}
       </div>
+      <IngredientSearch />
+
     </div>
     
   );

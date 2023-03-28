@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
+// import {
+//   exportComponentAsJPEG,
+//   exportComponentAsPDF,
+//   exportComponentAsPNG
+// } from "react-component-export-image";
 
 const Recipe = () => {
      const { cocktail } = useParams();
     const location = useLocation();
     const page = location.pathname;
     let apiUrl
+    // const componentRef = useRef();
 
     const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -43,7 +49,10 @@ const Recipe = () => {
               {" "}
               <h3>random again</h3>
             </Link> : null}
-                        
+            
+            {/* <button onClick={() => exportComponentAsJPEG(componentRef)}>
+        Export As JPEG
+      </button>          */}
 
             <h1> {drink.strDrink}</h1>
             <h5>
