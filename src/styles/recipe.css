@@ -14,9 +14,7 @@
 .instructions-list{
     list-style-type:circle;
     list-style-position: inside;
-       
-
-    padding-left:0
+           padding-left:0
 }
 
 
@@ -26,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
     /* transition: all 0.3s ease-in-out; */
     text-align: center;
     background-color: rgb(221, 207, 207);
@@ -35,7 +33,7 @@
     border-radius: 2rem;
     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
     height: 100%;
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 .drink-card h1{
     font-size: 2rem;
@@ -55,6 +53,23 @@
     box-shadow: 4px 6px 2rem 20px rgba(0,0,0,0.2);
 }
 
+.save-jpeg{
+    display: inline-block;
+    margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #9c9c9c;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+.save-jpeg:hover{
+    background-color: #242424;
+
+}
 
 .drink-image:hover{
     border-radius: 8rem;
@@ -66,8 +81,14 @@
 @media screen and (max-width: 768px){
     .drink-card{
         width: 20rem;
-        margin: 3.5rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
     }
+    .recipe-cont{
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+    
     .drink-card img{
         height: 18rem;
     }
