@@ -13,6 +13,8 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.3",
     "hash-router": "^0.4.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-component-export-image": "^1.0.6",

@@ -27,6 +27,7 @@ const NavTabs = () => {
           <h2 id="nav-btn">What's in your bar?</h2>
         </Link>
       )}
+      {/* renders random again button when on random page, and random button otherwise */}
       {page === "/Random" ? 
       <Link to="/Random" onClick={() => window.location.reload()}>      {" "}
       <h2 id="nav-btn">Random Again</h2>
