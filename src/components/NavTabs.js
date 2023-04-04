@@ -27,7 +27,12 @@ const NavTabs = () => {
           <h2 id="nav-btn">What's in your bar?</h2>
         </Link>
       )}
-      {page === "/Random" ? null : (
+      {page === "/Random" ? 
+      <Link to="/Random" onClick={() => window.location.reload()}>      {" "}
+      <h2 id="nav-btn">Random Again</h2>
+    </Link>
+      :
+       (
         <Link to="/Random">
           {" "}
           <h2 id="nav-btn">Random</h2>

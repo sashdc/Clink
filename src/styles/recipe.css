@@ -11,6 +11,14 @@
     margin-top: 2.5rem;
 }
 
+.instructions-list{
+    list-style-type:circle;
+    list-style-position: inside;
+       
+
+    padding-left:0
+}
+
 
 .drink-card{
     width: 25rem;
@@ -31,12 +39,12 @@
 }
 .drink-card h1{
     font-size: 2rem;
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 
 .card-ingredients{
     list-style-type : none;
-    margin: 2rem;
+    margin: 1rem;
     padding: 0;
 }
 

@@ -1,26 +1,35 @@
+// Importing necessary React hooks and components
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
-// import {
-//   exportComponentAsJPEG,
-//   exportComponentAsPDF,
-//   exportComponentAsPNG
-// } from "react-component-export-image";
 
+// Creating a functional component Recipe
 const Recipe = () => {
-     const { cocktail } = useParams();
-    const location = useLocation();
-    const page = location.pathname;
-    let apiUrl
-    // const componentRef = useRef();
+  // Extracting the cocktail parameter from the URL path
+  const { cocktail } = useParams();
+  
+  // Extracting the location object from the current URL path
+  const location = useLocation();
+  
+  // Storing the current page URL path in a variable
+  const page = location.pathname;
+  
+  // Setting up the API URL as a variable
+  let apiUrl;
 
-    const [error, setError] = useState(null);
+  // Setting up state using React hooks for error handling, data loading status, and drink data
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [drink, setDrink] = useState();
-  if (page === "/Random") { apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";}
-  else {apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;}
 
- 
+  // Conditional statement to set the API URL based on the current page URL path
+  if (page === "/Random") {
+    apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+  } else {
+    apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+  }
+
+  // useEffect hook to fetch data from the API when the component mounts and when the apiUrl variable changes
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -28,7 +37,6 @@ const Recipe = () => {
         (result) => {
           setIsLoaded(true);
           setDrink(result.drinks[0]);
-          console.log(result.drinks[0]);
         },
         (error) => {
           setIsLoaded(true);
@@ -36,120 +44,60 @@ const Recipe = () => {
         }
       );
   }, [apiUrl]);
+
+  // Conditional rendering based on error handling and data loading status
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div></div>;
   } else {
-  return (
-    <div className="recipe-page">
+    // Creating an ingredients array and loop through drink data to add to the array
+    const ingredients = [];
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = drink[`strIngredient${i}`];
+      const measurement = drink[`strMeasure${i}`];
+      if (ingredient && ingredient !== " " && ingredient !== "") {
+        ingredients.push(`${ingredient} - ${measurement}`);
+      }
+    }
+    
+    // Splitting drink instructions by period and filtering empty strings to create a list
+    const instructionsList = drink.strInstructions.split(". ").filter((sentence) => sentence !== "");
 
-    <div className="drink-card animate__animated animate__jackInTheBox">
-    {page === "/Random" ? <Link to="/Random" onClick={() => window.location.reload()}>
-              {" "}
-              <h3>random again</h3>
-            </Link> : null}
-            
-            {/* <button onClick={() => exportComponentAsJPEG(componentRef)}>
-        Export As JPEG
-      </button>          */}
+    // Rendering the drink recipe with drink data and the ingredients and instructions lists
+    return (
+      <div className="recipe-page">
+        <div className="drink-card animate__animated animate__jackInTheBox">
+         
 
-            <h1> {drink.strDrink}</h1>
-            <h5>
-              {drink.strCategory} ({drink.strAlcoholic})
-            </h5>
+          <h1>{drink.strDrink}</h1>
+          <h5>
+            {drink.strCategory} ({drink.strAlcoholic})
+          </h5>
 
-            <img
-              className="drink-image animate__animated animate__jello"
-              src={drink.strDrinkThumb}
-              alt={drink.strDrink}
-            ></img>
-            <br></br>
-            <ul className="card-ingredients">
-              <li>
-                {drink.strIngredient1} - {drink.strMeasure1}
-              </li>
-              {drink.strIngredient2 ? (
-                <li>
-                  {drink.strIngredient2} - {drink.strMeasure2}
-                </li>
-              ) : null}
-              {drink.strIngredient3 ? (
-                <li>
-                  {drink.strIngredient3} - {drink.strMeasure3}
-                </li>
-              ) : null}
-              {drink.strIngredient4 ? (
-                <li>
-                  {drink.strIngredient4} - {drink.strMeasure4}
-                </li>
-              ) : null}
-              {drink.strIngredient5 ? (
-                <li>
-                  {drink.strIngredient5} - {drink.strMeasure5}
-                </li>
-              ) : null}
-              {drink.strIngredient6 ? (
-                <li>
-                  {drink.strIngredient6} - {drink.strMeasure6}
-                </li>
-              ) : null}
-              {drink.strIngredient7 ? (
-                <li>
-                  {drink.strIngredient7} - {drink.strMeasure7}
-                </li>
-              ) : null}
-              {drink.strIngredient8 ? (
-                <li>
-                  {drink.strIngredient8} - {drink.strMeasure8}
-                </li>
-              ) : null}
-              {drink.strIngredient9 ? (
-                <li>
-                  {drink.strIngredient9} - {drink.strMeasure9}
-                </li>
-              ) : null}
-              {drink.strIngredient10 ? (
-                <li>
-                  {drink.strIngredient10} - {drink.strMeasure10}
-                </li>
-              ) : null}
-              {drink.strIngredient11 ? (
-                <li>
-                  {drink.strIngredient11} - {drink.strMeasure11}
-                </li>
-              ) : null}
-              {drink.strIngredient12 ? (
-                <li>
-                  {drink.strIngredient12} - {drink.strMeasure12}
-                </li>
-              ) : null}
-              {drink.strIngredient13 ? (
-                <li>
-                  {drink.strIngredient13} - {drink.strMeasure13}
-                </li>
-              ) : null}
-              {drink.strIngredient14 ? (
-                <li>
-                  {drink.strIngredient14} - {drink.strMeasure14}
-                </li>
-              ) : null}
-              {drink.strIngredient15 ? (
-                <li>
-                  {drink.strIngredient15} - {drink.strMeasure15}
-                </li>
-              ) : null}
-              {drink.strIngredient16 ? (
-                <li>
-                  {drink.strIngredient16} - {drink.strMeasure16}
-                </li>
-              ) : null}
-            </ul>
-            <h4>{drink.strInstructions}</h4>
-          </div>
+          <img
+            className="drink-image animate__animated animate__jello"
+            src={drink.strDrinkThumb}
+            alt={drink.strDrink}
+          ></img>
+          <br></br>
+
+          <ul className="card-ingredients">
+          <b> {drink.strGlass}</b>
+
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+          <ul className="instructions-list">
+            {instructionsList.map((sentence, index) => (
+              <li key={index}>{sentence}</li>
+            ))}
+          </ul>
         </div>
-  )
-}
-}
+      </div>
+    );
+  }
+};
 
-export default Recipe
+export default Recipe;
