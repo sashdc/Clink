@@ -63,5 +63,14 @@
     z-index: 1;
   }
 
+  #nav-btn:hover{
+    /* border-radius: 22px 22px 22px 22px; */
+    transition: .4s;
+    opacity: 1;
+    scale: .8;
+    padding: 0;
+    translate: 0;
+  }
+
   }
  

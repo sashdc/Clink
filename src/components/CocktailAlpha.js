@@ -29,7 +29,7 @@ const CocktailAlpha = () => {
       <ul className='grid-section'>
         {cocktails.map(cocktail => (
            <div className='grid-item animate__animated animate__bounceIn'><Link to={`/${cocktail.strDrink}`}>
-            <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded' height='200px'/>
+            <img src={cocktail.strDrinkThumb} alt = {cocktail.strDrink} className='rounded grid-thumb' height='200px'/>
             {/* if drnk is alcoholic show coktail, or mocktail if not */}
             {cocktail.strAlcoholic === "Alcoholic" ? <p className='cocktail-name'>{cocktail.strDrink} (Cocktail)</p> : <p className='cocktail-name'>{cocktail.strDrink} (Mocktail)</p>}
           {/* <li key={cocktail.idDrink}>{cocktail.strDrink}({cocktail.strAlcoholic})</li> */}

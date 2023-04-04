@@ -55,7 +55,7 @@
 
 .save-jpeg{
     display: inline-block;
-    margin-top: 1rem;
+    margin: 1rem 0;
   padding: 10px 20px;
   background-color: #9c9c9c;
   color: #fff;
