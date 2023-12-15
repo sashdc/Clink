@@ -7,9 +7,27 @@
     /* background-image: url(../../public/images/pour.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
+    /* backdrop-filter: blur(5px); */
     /* position: fixed; */
     margin-top: 2.5rem;
 }
+
+.background{
+animation: infinite blur 6s ease-in-out;}
+
+@keyframes blur{
+    0%{
+        filter: blur(2px);
+    }
+    50%{
+        filter: blur(6px);
+        scale: 1.02;
+    }
+    100%{
+        filter: blur(2px);
+    }
+}
+
 
 .instructions-list{
     list-style-type:circle;
@@ -29,8 +47,8 @@
     text-align: center;
     background-color: rgb(221, 207, 207);
     padding: 1rem;
-    border: 5px solid rgb(126, 126, 126);
-    border-radius: 2rem;
+    border: 3px solid rgba(126, 126, 126, 0.468);
+    border-radius: 1rem;
     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
     height: 100%;
     /* margin: 1rem; */

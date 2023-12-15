@@ -43,11 +43,11 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    border-radius: 70%;
+    border-radius: 95px;
     color: #333;
     background-color: #d4d4d4;
     border-color: #ccc;
-    transition: .8s;
+    transition: .4s ease-in-out;
 
 }
 
