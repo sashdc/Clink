@@ -12,6 +12,10 @@ const Recipe = () => {
   // Extracting the location object from the current URL path
   const location = useLocation();
 
+  // load or create favourites array
+  let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+
   // Storing the current page URL path in a variable
   const page = location.pathname;
 
@@ -39,6 +43,7 @@ const Recipe = () => {
       .then((res) => res.json())
       .then(
         (result) => {
+          console.log(result);
           setIsLoaded(true);
           setDrink(result.drinks[0]);
         },
@@ -58,6 +63,8 @@ const Recipe = () => {
     });
   };
 
+
+
   // Conditional rendering based on error handling and data loading status
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -72,6 +79,13 @@ const Recipe = () => {
       if (ingredient && ingredient !== " " && ingredient !== "") {
         ingredients.push(`${ingredient} - ${measurement}`);
       }
+    }
+
+    const saveRecipeCardAsFav = () => {
+      // save the recipe card to a favourites section using it's id 
+      console.log(`Cocktail id#${drink.idDrink}saved to favourites`);
+      favourites.push(drink.idDrink);
+      localStorage.setItem('favourites', JSON.stringify(favourites));
     }
 
     // Splitting drink instructions by period and filtering empty strings to create a list
@@ -116,6 +130,10 @@ const Recipe = () => {
           </div>
           <button className="save-jpeg" onClick={saveRecipeCardAsJpeg}>
             Save to device
+          </button>
+          {/* create a button that saves the current recipe to a favourites section */}
+          <button className="save-jpeg" onClick={saveRecipeCardAsFav}>
+            Save to Favourites
           </button>
         </div>
       </div>
