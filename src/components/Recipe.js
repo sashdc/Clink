@@ -84,6 +84,12 @@ const Recipe = () => {
     const saveRecipeCardAsFav = () => {
       // save the recipe card to a favourites section using it's id 
       console.log(`Cocktail id#${drink.idDrink}saved to favourites`);
+      // check if array contains drink.idDrink
+      if (favourites.includes(drink.idDrink)) {
+        console.log("already in favourites");
+        return;
+      }
+      // if not, add it to the array
       favourites.push(drink.idDrink);
       localStorage.setItem('favourites', JSON.stringify(favourites));
     }
