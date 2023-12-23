@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/favourites.css";
+import "animate.css";
+
 
 // Function to fetch drink details by id
 async function fetchDrinkDetails(id) {
@@ -59,17 +61,16 @@ function FavoriteDrinks() {
                     <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar"/>
 
       <h1>Favorite Drinks</h1>
-      <div className="fav-container">
+      <div className="fav-container animate__animated animate__bounceIn">
         {favoriteDrinkDetails.map((drink) => (
             // render a card which has the image, and the name of the drink
-            <div className="fav-card">
-            <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-            <h2>{drink.strDrink}</h2>
+            <Link to={`/${drink.strDrink}`}>
+                <div className="fav-card">
+                <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                <h2>{drink.strDrink}</h2>
             </div>
-
-        //   <li key={drink.idDrink}>
-        //     <Link to={`/cocktails/${drink.idDrink}`}>{drink.strDrink}</Link>
-        //   </li>
+            </Link>
+     
         ))}
         </div>
     </div>
