@@ -12,6 +12,7 @@ import Ingredient from "./pages/Ingredient";
 import Cocktail from "./pages/Cocktail";
 import CocktailAlpha from "./components/CocktailAlpha";
 import SearchResults from "./pages/SearchResults";
+import Favourites from "./pages/Favourites";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <Route path="/cocktails/:letter" element={<CocktailAlpha />} />
           <Route path="/search/:searchTerm" element={<SearchResults />} />
           <Route path="/search" element={<SearchResults />} />
-
+          <Route path="/favourites" element={<Favourites />} />
           <Route path="/:cocktail" element={<Cocktail />} />
           <Route path="/random" element={<Random />} />
           <Route path="/List" element={<List />} />

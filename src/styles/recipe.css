@@ -12,20 +12,23 @@
     margin-top: 2.5rem;
 }
 
-.background{
-animation: infinite blur 6s ease-in-out;}
+.unfave-heart, .fave-heart{
+    font-size: 2rem;
+    /* margin: 1rem; */
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 8px;
+    right: 8px
+}
 
-@keyframes blur{
-    0%{
-        filter: blur(2px);
-    }
-    50%{
-        filter: blur(6px);
-        scale: 1.02;
-    }
-    100%{
-        filter: blur(2px);
-    }
+.unfave-heart{
+    color: #b41212;
+
+}
+
+.fave-heart{
+    color: #931818;
 }
 
 
