@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/favourites.css";
 import "animate.css";
-
+import NavTabs from "../components/NavTabs";
+import Search from "../components/Search";
+import Shaker from "../components/Shaker";
 
 // Function to fetch drink details by id
 async function fetchDrinkDetails(id) {
@@ -43,7 +45,8 @@ async function fetchFavoriteDrinkDetails(favorites) {
 // Example component
 function FavoriteDrinks() {
   const [favoriteDrinkDetails, setFavoriteDrinkDetails] = useState([]);
-  
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     // Retrieve favorites from local storage
     const favorites = JSON.parse(localStorage.getItem('favourites')) || [];
@@ -51,6 +54,7 @@ function FavoriteDrinks() {
     async function fetchData() {
       const details = await fetchFavoriteDrinkDetails(favorites);
       setFavoriteDrinkDetails(details);
+      setLoading(false); // Set loading to false when data is loaded
     }
 
     fetchData();
@@ -58,21 +62,29 @@ function FavoriteDrinks() {
 
   return (
     <div>
-                    <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar"/>
-
-      <h1>Favorite Drinks</h1>
-      <div className="fav-container animate__animated animate__bounceIn">
-        {favoriteDrinkDetails.map((drink) => (
-            // render a card which has the image, and the name of the drink
-            <Link to={`/${drink.strDrink}`}>
-                <div className="fav-card">
-                <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-                <h2>{drink.strDrink}</h2>
-            </div>
-            </Link>
-     
-        ))}
-        </div>
+      <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar" />
+      <NavTabs />
+      <Search />
+      <h1 className="section-heading">Favorite Drinks</h1>
+      <div className={`grid-section ${loading ? 'animate__animated animate__fadeIn' : ''}`}>
+        {loading ? (
+          // Render loading animation here
+          <div className="loading-animation"><Shaker/></div>
+        ) : (
+          // Render favorite drinks when data is loaded
+          <>
+            {favoriteDrinkDetails.map((drink) => (
+              // render a card which has the image, and the name of the drink
+              <Link key={drink.idDrink} to={`/${drink.strDrink}`}>
+                <div className="fav-card animate__animated animate__bounceIn">
+                  <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                  <h2>{drink.strDrink}</h2>
+                </div>
+              </Link>
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 }

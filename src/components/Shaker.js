@@ -6,8 +6,7 @@ import '../styles/shaker.css'
 const Shaker = () => {
   return (
     <div className='loading-backround'>
-        <img className = "shakergif" src={shakergif} alt="shaker" />
-
+        <img className = "grid-section" src={shakergif} alt="shaker" />
     </div>
 
   )
