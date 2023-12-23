@@ -3,6 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { toJpeg } from "html-to-image";
+// import font awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as outlineHeart } from '@fortawesome/free-regular-svg-icons';
+
 
 // Creating a functional component Recipe
 const Recipe = () => {
@@ -108,8 +113,12 @@ const Recipe = () => {
               className="drink-card animate__animated animate__jackInTheBox"
               ref={recipeCardRef}
             >
-              <h1>{drink.strDrink}</h1>
+              <h1>{drink.strDrink}</h1>         
+              <FontAwesomeIcon className="unfave-heart" icon={outlineHeart} onClick={saveRecipeCardAsFav} />
+
+
               <h5>
+                
                 {drink.strCategory} ({drink.strAlcoholic})
               </h5>
 
@@ -138,9 +147,9 @@ const Recipe = () => {
             Save to device
           </button>
           {/* create a button that saves the current recipe to a favourites section */}
-          <button className="save-jpeg" onClick={saveRecipeCardAsFav}>
+          {/* <button className="save-jpeg" onClick={saveRecipeCardAsFav}>
             Save to Favourites
-          </button>
+          </button> */}
         </div>
       </div>
     );
