@@ -15,6 +15,13 @@ const NavTabs = () => {
         <h2 id="nav-btn">Back Home</h2>
       </Link>
 
+      {page === "/Favourites" ? null : (
+        <Link to="/Favourites">
+          {" "}
+          <h2 id="nav-btn">Favourites</h2>
+        </Link>
+      )}
+
       {page === "/List" ? null : (
         <Link to="/List">
           {" "}
@@ -39,6 +46,7 @@ const NavTabs = () => {
           <h2 id="nav-btn">Random</h2>
         </Link>
       )}
+      
     </div>
   );
 };
