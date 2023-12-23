@@ -17,12 +17,12 @@
 
 .fav-card{
     width: 200px;
-    background-color: #fff;
+    background-color: #c9c9c9;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.829);
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.829);
     padding: 10px;
     margin: 10px;
-    margin-bottom:3rem;
+    margin-bottom:2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
