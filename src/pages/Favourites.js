@@ -49,7 +49,7 @@ function FavoriteDrinks() {
 
   useEffect(() => {
     // Retrieve favorites from local storage
-    const favorites = JSON.parse(localStorage.getItem('favourites')) || [];
+    const favorites = JSON.parse(localStorage.getItem("favourites")) || [];
 
     async function fetchData() {
       const details = await fetchFavoriteDrinkDetails(favorites);
@@ -62,14 +62,20 @@ function FavoriteDrinks() {
 
   return (
     <div>
-      <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar" />
+      <img
+        className="background"
+        src="./images/bottles.jpg"
+        alt="bottles behind a bar"
+      />
       <NavTabs />
       <Search />
-      <h1 className="section-heading">Favorite Drinks</h1>
-      <div className={`grid-section ${loading ? 'animate__animated animate__fadeIn' : ''}`}>
+      <h1 className="section-heading">Your Favourite Drinks</h1>
+      <div className={`grid-section 'animate__animated animate__fadeIn' : ''}`}>
         {loading ? (
           // Render loading animation here
-          <div className="loading-animation"><Shaker/></div>
+          <div className="loading-animation">
+            <Shaker />
+          </div>
         ) : (
           // Render favorite drinks when data is loaded
           <>

@@ -7,20 +7,20 @@ import "animate.css";
 // import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 
-
-
 const Random = () => {
-  
-    return (
-      <div>
-        <img className="background" src="./images/pour.jpg" alt="drink being poured at a bar" />
+  return (
+    <div>
+      <img
+        className="background"
+        src="./images/pour.jpg"
+        alt="drink being poured at a bar"
+      />
 
-          <NavTabs />
-          <Search />
-          <Recipe />
-      </div>
-    );
-  
+      <NavTabs />
+      <Search />
+      <Recipe />
+    </div>
+  );
 };
 
 export default Random;

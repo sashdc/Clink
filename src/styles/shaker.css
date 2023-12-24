@@ -1,17 +1,3 @@
-.loading-backround{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    /* background-color: rgb(197, 32, 32); */
-}
-
-.shakergif{
-    margin: auto auto;
-    display: block;
-    width: auto;
-    height: 4rem;
-    background-color:transparent;
+#shakergif{
+background-color: transparent;
 }

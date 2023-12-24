@@ -18,8 +18,8 @@
     cursor: pointer;
     transition: 0.3s;
     position: absolute;
-    top: 8px;
-    right: 8px
+    top: 2px;
+    right: 2px
 }
 
 .unfave-heart{

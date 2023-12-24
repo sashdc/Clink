@@ -21,7 +21,7 @@
         /* move to centre of screen */
         margin: auto;
         margin-bottom: 2rem;
-        list-style-type: none;
+        /* list-style-type: none; */
     }
 
     .grid-item {

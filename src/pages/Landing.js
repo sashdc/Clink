@@ -13,22 +13,22 @@ const Landing = () => {
 
   return (
     <div className="main-splash animate__animated animate__fadeIn">
-             {/* <img className="background" src="./images/bar.jpg" /> */}
+      {/* <img className="background" src="./images/bar.jpg" /> */}
 
-     {/* search bar */}
+      {/* search bar */}
 
-        
       <div className="main-nav">
-        <Link to="/Random" onClick={playSound} >
-          
+        <Link to="/Random" onClick={playSound}>
           <h2 className="main-tile tile-random">Random</h2>
-                  </Link>
+        </Link>
         <Link to="/List" onClick={playSound}>
           <h2 className="main-tile tile-list">A-Z</h2>
         </Link>
         <Link to="/Bar" onClick={playSound}>
-        
           <h2 className="main-tile tile-bar">Bar</h2>
+        </Link>
+        <Link to="/Favourites" onClick={playSound}>
+          <h2 className="main-tile tile-fav">Favourites</h2>
         </Link>
       </div>
       <Search />
