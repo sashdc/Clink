@@ -22,13 +22,24 @@
     right: 2px
 }
 
+.unfave-heart:hover, .fave-heart:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
+.unfave-heart:active, .fave-heart:active{
+    transform: scale(.7);
+    transition: 0.3s;
+}
+
 .unfave-heart{
-    color: #b41212;
+    color: #e10101;
 
 }
 
 .fave-heart{
-    color: #931818;
+    color: #7a0505;
 }
 
 

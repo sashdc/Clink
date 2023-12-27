@@ -13,7 +13,7 @@ Clink is a webapp that uses the https://www.thecocktaildb.com/ API to let users 
 
 ## How to Use Clink:
 
-On landing, the user is given the choice of Random, A-Z, or Bar. Once in the latter two links they are given choices of alphabet or ingredients which then generates a list of pertinent cocktails with images that can be chosen to generate the recipe card.
+On landing, the user is given the choice of Random, A-Z, or Bar. Once in the latter two links they are given choices of alphabet or ingredients which then generates a list of pertinent cocktails with images that can be chosen to generate the recipe card. Recipes can be saved to favourites which are stored in local storage and can be accessed via the favourites page.
 
 ## Technologies Used:
 
@@ -29,7 +29,7 @@ On landing, the user is given the choice of Random, A-Z, or Bar. Once in the lat
 
 ### Links
 
- [Github Page](https://clink.herokuapp.com/)
+ [Deployed Page](https://clink.herokuapp.com/)
 
  [Github Repo](https://github.com/sashdc/clink)
 

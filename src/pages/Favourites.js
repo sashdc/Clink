@@ -1,4 +1,3 @@
-// Importing necessary React hooks and components
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/favourites.css";
@@ -6,6 +5,8 @@ import "animate.css";
 import NavTabs from "../components/NavTabs";
 import Search from "../components/Search";
 import Shaker from "../components/Shaker";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 // Function to fetch drink details by id
 async function fetchDrinkDetails(id) {
@@ -15,9 +16,8 @@ async function fetchDrinkDetails(id) {
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    // Check if the request was successful
     if (response.ok) {
-      return data.drinks[0]; // Assuming the API returns an array of drinks, take the first item
+      return data.drinks[0];
     } else {
       console.error("Error fetching drink details:", data.message);
       return null;
@@ -47,16 +47,32 @@ function FavoriteDrinks() {
   const [favoriteDrinkDetails, setFavoriteDrinkDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Retrieve favorites from local storage
+  const removeFavorite = async (id) => {
+    let favorites = JSON.parse(localStorage.getItem("favourites")) || [];
+    favorites = favorites.filter((favoriteId) => favoriteId !== id);
+    localStorage.setItem("favourites", JSON.stringify(favorites));
+
+    // Add fade-out animation class to the removed item
+    const updatedDetails = favoriteDrinkDetails.map((drink) =>
+      drink.idDrink === id ? { ...drink, removed: true } : drink
+    );
+
+    setFavoriteDrinkDetails(updatedDetails);
+
+    // Wait for the animation to complete before fetching updated data
+    await new Promise((resolve) => setTimeout(resolve, 100));
+
+    fetchData();
+  };
+
+  const fetchData = async () => {
     const favorites = JSON.parse(localStorage.getItem("favourites")) || [];
+    const details = await fetchFavoriteDrinkDetails(favorites);
+    setFavoriteDrinkDetails(details.map((drink) => ({ ...drink, removed: false })));
+    setLoading(false);
+  };
 
-    async function fetchData() {
-      const details = await fetchFavoriteDrinkDetails(favorites);
-      setFavoriteDrinkDetails(details);
-      setLoading(false); // Set loading to false when data is loaded
-    }
-
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -70,23 +86,24 @@ function FavoriteDrinks() {
       <NavTabs />
       <Search />
       <h1 className="section-heading">Your Favourite Drinks</h1>
-      <div className={`grid-section 'animate__animated animate__fadeIn' : ''}`}>
+      <div className={`grid-section animate__animated animate__fadeIn`}>
         {loading ? (
-          // Render loading animation here
           <div className="loading-animation">
             <Shaker />
           </div>
         ) : (
-          // Render favorite drinks when data is loaded
           <>
             {favoriteDrinkDetails.map((drink) => (
-              // render a card which has the image, and the name of the drink
-              <Link key={drink.idDrink} to={`/${drink.strDrink}`}>
-                <div className="fav-card animate__animated animate__bounceIn">
-                  <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-                  <h2>{drink.strDrink}</h2>
-                </div>
-              </Link>
+              <div
+                key={drink.idDrink}
+                className={`fav-card animate__animated ${
+                  drink.removed ? "animate__fadeOutDown" : "animate__bounceIn"
+                }`}
+              >
+                <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                <h2>{drink.strDrink}</h2>
+                <FontAwesomeIcon icon={faHeart} className="heart-icon remove-fav" title="remove from favourites" onClick={() => removeFavorite(drink.idDrink)} />
+              </div>
             ))}
           </>
         )}
