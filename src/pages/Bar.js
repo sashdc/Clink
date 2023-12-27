@@ -8,7 +8,6 @@ import NavTabs from "../components/NavTabs";
 import "../styles/grid.css";
 import Search from "../components/Search";
 
-
 const Bar = () => {
   const [ingredients, setIngredients] = useState([]);
 
@@ -21,27 +20,34 @@ const Bar = () => {
 
   return (
     <div>
-            <img className="background" src="./images/bottles.jpg" alt="bottles behind a bar"/>
+      <img
+        className="background"
+        src="./images/bottles.jpg"
+        alt="bottles behind a bar"
+      />
 
-    <div className="grid-page">
-      <NavTabs />
-      <Search />
-      <h2 className="section-heading">What's in your bar?</h2>
-      <ul className="grid-section ">
-        {ingredients.map((ingredient) => (
-          <li className="grid-item animate__animated animate__bounceIn" key={ingredient.strIngredient1}>
-            <Link to={`/ingredients/${ingredient.strIngredient1}`}>
-              <img
-                className="ingredient-img"
-                src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`}
-                alt={ingredient.strIngredient1}
-              />
-              <p>{ingredient.strIngredient1}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="grid-page">
+        <NavTabs />
+        <Search />
+        <h2 className="section-heading">What's in your bar?</h2>
+        <ul className="grid-section ">
+          {ingredients.map((ingredient) => (
+            <li
+              className="grid-item animate__animated animate__bounceIn"
+              key={ingredient.strIngredient1}
+            >
+              <Link to={`/ingredients/${ingredient.strIngredient1}`}>
+                <img
+                  className="ingredient-img"
+                  src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`}
+                  alt={ingredient.strIngredient1}
+                />
+                <p>{ingredient.strIngredient1}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

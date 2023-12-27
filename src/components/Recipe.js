@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { toJpeg } from "html-to-image";
-import FavoriteButton from './FavoriteButton';
+import FavoriteButton from "./FavoriteButton";
 
 const Recipe = () => {
   const { cocktail } = useParams();
@@ -41,7 +41,8 @@ const Recipe = () => {
   }, [apiUrl]);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem('favourites')) || [];
+    const storedFavorites =
+      JSON.parse(localStorage.getItem("favourites")) || [];
     setFavourites(storedFavorites);
   }, []);
 
@@ -51,7 +52,10 @@ const Recipe = () => {
       return;
     }
     setFavourites([...favourites, drink.idDrink]);
-    localStorage.setItem('favourites', JSON.stringify([...favourites, drink.idDrink]));
+    localStorage.setItem(
+      "favourites",
+      JSON.stringify([...favourites, drink.idDrink])
+    );
   };
 
   const removeRecipeCardFromFav = () => {
@@ -60,7 +64,7 @@ const Recipe = () => {
       const newFavourites = [...favourites];
       newFavourites.splice(indexToRemove, 1);
       setFavourites(newFavourites);
-      localStorage.setItem('favourites', JSON.stringify(newFavourites));
+      localStorage.setItem("favourites", JSON.stringify(newFavourites));
     }
   };
 
@@ -76,7 +80,7 @@ const Recipe = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   } else {
     const ingredients = [];
     for (let i = 1; i <= 15; i++) {
@@ -87,7 +91,9 @@ const Recipe = () => {
       }
     }
 
-    const instructionsList = drink.strInstructions.split(". ").filter((sentence) => sentence !== "");
+    const instructionsList = drink.strInstructions
+      .split(". ")
+      .filter((sentence) => sentence !== "");
 
     return (
       <div className="recipe-page">

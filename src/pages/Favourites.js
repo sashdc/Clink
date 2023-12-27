@@ -5,8 +5,8 @@ import "animate.css";
 import NavTabs from "../components/NavTabs";
 import Search from "../components/Search";
 import Shaker from "../components/Shaker";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 // Function to fetch drink details by id
 async function fetchDrinkDetails(id) {
@@ -46,7 +46,7 @@ async function fetchFavoriteDrinkDetails(favorites) {
 function FavoriteDrinks() {
   const [favoriteDrinkDetails, setFavoriteDrinkDetails] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   const removeFavorite = async (id) => {
     let favorites = JSON.parse(localStorage.getItem("favourites")) || [];
     favorites = favorites.filter((favoriteId) => favoriteId !== id);
@@ -68,7 +68,9 @@ function FavoriteDrinks() {
   const fetchData = async () => {
     const favorites = JSON.parse(localStorage.getItem("favourites")) || [];
     const details = await fetchFavoriteDrinkDetails(favorites);
-    setFavoriteDrinkDetails(details.map((drink) => ({ ...drink, removed: false })));
+    setFavoriteDrinkDetails(
+      details.map((drink) => ({ ...drink, removed: false }))
+    );
     setLoading(false);
   };
 
@@ -83,34 +85,45 @@ function FavoriteDrinks() {
         src="./images/bottles.jpg"
         alt="bottles behind a bar"
       />
-      <NavTabs />
-      <Search />
-      <h1 className="section-heading">Your Favourite Drinks</h1>
-      <div className={`grid-section animate__animated animate__fadeIn`}>
-        {loading ? (
-          <div className="loading-animation">
-            <Shaker />
-          </div>
-        ) : (
-          <>
-            {favoriteDrinkDetails.map((drink) => (
-              <div
-                key={drink.idDrink}
-                className={`fav-card animate__animated ${
-                  drink.removed ? "animate__fadeOutDown" : "animate__bounceIn"
-                }`}
-              >
-                    <FontAwesomeIcon icon={faHeart} className="heart-icon remove-fav" title="remove from favourites" onClick={() => removeFavorite(drink.idDrink)} />
-                <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-                <Link to={`/${drink.strDrink}`} key={drink.idDrink}>
-                <h2>{drink.strDrink}</h2>
-                </Link>
-
-            
-              </div>
-            ))}
-          </>
-        )}
+      <div className="grid-page">
+        <NavTabs />
+        <Search />
+        <h1 className="section-heading">Your Favourite Drinks</h1>
+        <div className={`grid-section animate__animated animate__fadeIn`}>
+          {loading ? (
+            <div className="loading-animation">
+              <Shaker />
+            </div>
+          ) : (
+            <>
+            {favoriteDrinkDetails.length === 0 && ( 
+              <div className="no-favorites">
+                <h2>You have no favourite drinks yet</h2>
+                <p>Click the heart icon on a drink to add it to your favourites</p>
+                </div>
+                )}
+              {favoriteDrinkDetails.map((drink) => (
+                <div
+                  key={drink.idDrink}
+                  className={`fav-card animate__animated ${
+                    drink.removed ? "animate__fadeOutDown" : "animate__bounceIn"
+                  }`}
+                >
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    className="heart-icon remove-fav"
+                    title="remove from favourites"
+                    onClick={() => removeFavorite(drink.idDrink)}
+                  />
+                  <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                  <Link to={`/${drink.strDrink}`} key={drink.idDrink}>
+                    <h2>{drink.strDrink}</h2>
+                  </Link>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
