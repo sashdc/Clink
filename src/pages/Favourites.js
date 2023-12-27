@@ -100,9 +100,13 @@ function FavoriteDrinks() {
                   drink.removed ? "animate__fadeOutDown" : "animate__bounceIn"
                 }`}
               >
+                    <FontAwesomeIcon icon={faHeart} className="heart-icon remove-fav" title="remove from favourites" onClick={() => removeFavorite(drink.idDrink)} />
                 <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                <Link to={`/${drink.strDrink}`} key={drink.idDrink}>
                 <h2>{drink.strDrink}</h2>
-                <FontAwesomeIcon icon={faHeart} className="heart-icon remove-fav" title="remove from favourites" onClick={() => removeFavorite(drink.idDrink)} />
+                </Link>
+
+            
               </div>
             ))}
           </>
