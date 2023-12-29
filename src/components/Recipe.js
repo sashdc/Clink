@@ -1,6 +1,6 @@
 // Recipe.js
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { toJpeg } from "html-to-image";
 import FavoriteButton from "./FavoriteButton";
