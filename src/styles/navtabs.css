@@ -45,7 +45,6 @@
 
     left: 0;
     justify-content: space-between;
-    /* margin: 0 auto; */
    }
 
    #nav-btn{
@@ -55,16 +54,14 @@
     color: white;
     font-size: .8rem;
     font-weight: 400;
-    line-height: 1.42857143;
     opacity: 0.9;
     border: 2px solid transparent;
-    border-radius: 32px 32px 32px 32px;
+    border-radius: 32px;
     transition: .4s;
     z-index: 1;
   }
 
   #nav-btn:hover{
-    /* border-radius: 22px 22px 22px 22px; */
     transition: .4s;
     opacity: 1;
     scale: .8;
