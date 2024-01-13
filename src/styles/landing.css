@@ -1,5 +1,5 @@
 .main-splash {
-  background: url(../../public/images/bar.jpg) no-repeat center center fixed;
+  /* background: url(../../public/images/bar.webp) no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,19 +33,19 @@
 }
 
 .tile-random {
-  background: url(../../public/images/cocktail.jpg) center;
+  background: url(../../public/images/cocktail.webp) center;
 }
 
 .tile-list {
-  background: url(../../public/images/cocktails.jpg) center;
+  background: url(../../public/images/cocktails.webp) center;
 }
 
 .tile-bar {
-  background: url(../../public/images/bottles.jpg) center;
+  background: url(../../public/images/bottles.webp) center;
 }
 
 .tile-fav {
-  background: url(../../public/images/fav.jpg) center no-repeat ;
+  background: url(../../public/images/fav.webp) center no-repeat ;
 }
 
 .main-tile {
@@ -62,12 +62,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: 0px 0px 30px 6px rgba(0, 0, 0);
   color: white;
   font-size: 2em;
   font-weight: bold;
 
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
-  box-shadow: 0px -80px 30px 6px rgba(0, 0, 0, 0.6);
   transition: 0.5s;
   border: 5px solid rgba(192, 192, 192, 0.742);
   z-index: 200;
@@ -86,13 +86,12 @@
 }
 
 .main-tile:hover {
-  scale: 1.4;
+  scale: 1.1;
   font-weight: bolder;
   transition: 0.6s ease-in-out;
-  /* transform: translateY(-15px); */
-  box-shadow: 0px 0px 30px 6px rgba(0, 0, 0);
+  box-shadow: 0px -20px 30px 6px rgba(0, 0, 0, 0.6);
   border: 14px solid rgba(192, 192, 192, 0.272);
-  rotate: 360deg;
+  /* rotate: 360deg; */
 }
 
 @media screen and (max-width: 1000px) {

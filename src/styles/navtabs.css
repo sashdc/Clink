@@ -1,17 +1,16 @@
-
-.navtabs{
-    /* display: flex;
+.navtabs {
+  /* display: flex;
     flex-direction: row; */
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    
-    display: inline-block;
-    z-index: 1;
-    /* centre tabs on screen */
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+
+  display: inline-block;
+  z-index: 1;
+  /* centre tabs on screen */
 }
 
-#nav-btn{
+#nav-btn {
   padding: 12px 12px;
   background-color: rgb(83, 83, 83);
   color: white;
@@ -21,22 +20,22 @@
   opacity: 0.6;
   border: 2px solid transparent;
   border-radius: 32px 32px 32px 32px;
-  transition: .4s;
+  transition: 0.4s;
   z-index: 1;
 }
 
-#nav-btn:hover{
-    border-radius: 22px 22px 22px 22px;
-    transition: .4s;
-    opacity: 1;
-    scale: 1.2;
-    padding: 1rem;
-    translate: 2rem;
-  }
+#nav-btn:hover {
+  border-radius: 22px 22px 22px 22px;
+  transition: 0.4s;
+  opacity: 1;
+  scale: 1.2;
+  padding: 1rem;
+  translate: 2rem;
+}
 
-  /* media query for smaller screens */
-  @media screen and (max-width: 600px) {
-    .navtabs{
+/* media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .navtabs {
     display: flex;
     flex-direction: row;
     position: fixed;
@@ -45,29 +44,27 @@
 
     left: 0;
     justify-content: space-between;
-   }
+  }
 
-   #nav-btn{
+  #nav-btn {
     padding: 5px 5px;
     background-color: rgb(83, 83, 83);
     margin: 5px;
     color: white;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 400;
     opacity: 0.9;
     border: 2px solid transparent;
     border-radius: 32px;
-    transition: .4s;
+    transition: 0.4s;
     z-index: 1;
   }
 
-  #nav-btn:hover{
-    transition: .4s;
+  #nav-btn:hover {
+    transition: 0.4s;
     opacity: 1;
-    scale: .8;
+    scale: 0.8;
     padding: 0;
     translate: 0;
   }
-
-  }
- 
+}

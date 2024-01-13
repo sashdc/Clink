@@ -3,8 +3,6 @@ import "../styles/recipe.css";
 import NavTabs from "../components/NavTabs";
 import Recipe from "../components/Recipe";
 import "animate.css";
-// import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 
 const Random = () => {
@@ -12,8 +10,8 @@ const Random = () => {
     <div>
       <img
         className="background"
-        src="./images/pour.jpg"
-        alt="drink being poured at a bar"
+        src="../images/bar.webp"
+        alt="bottles in a bar"
       />
 
       <NavTabs />

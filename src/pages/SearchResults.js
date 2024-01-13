@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import '../styles/cocktailAlpha.css';
 import NavTabs from "../components/NavTabs";
 import "../styles/grid.css";
 import Search from "../components/Search";
@@ -26,7 +25,7 @@ const SearchResults = () => {
     <div className="grid-page">
       <img
         className="background"
-        src="../images/bottles.jpg"
+        src="../images/bar.webp"
         alt="bottles in a bar"
       />
       <NavTabs />

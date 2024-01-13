@@ -21,8 +21,8 @@ const CocktailAlpha = () => {
     <div className="grid-page">
       <img
         className="background"
-        src="../images/bottles.jpg"
-        alt="bottles in a bar"
+        src="../images/bar.webp"
+        alt="a bar with bottles on the shelves lit with red neon bar sign"
       />
       <NavTabs />
       <Search />

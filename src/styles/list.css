@@ -1,6 +1,6 @@
 .alpha-list{
 /* set background as local image */
-    background: url(../../public/images/bar.jpg) no-repeat center center fixed;
+    /* background: url(../../public/images/bar.webp) no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
