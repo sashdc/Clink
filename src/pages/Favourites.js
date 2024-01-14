@@ -80,11 +80,11 @@ function FavoriteDrinks() {
 
   return (
     <div>
-      <img
+      {/* <img
         className="background"
         src="../images/bar.webp"
         alt="bottles in a bar"
-      />
+      /> */}
       <div className="grid-page">
         <NavTabs />
         <Search />

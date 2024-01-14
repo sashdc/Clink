@@ -23,11 +23,11 @@ const SearchResults = () => {
 
   return (
     <div className="grid-page">
-      <img
+      {/* <img
         className="background"
         src="../images/bar.webp"
         alt="bottles in a bar"
-      />
+      /> */}
       <NavTabs />
       <Search />
 

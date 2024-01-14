@@ -8,6 +8,20 @@
   box-sizing: border-box;
 }
 
+.background-img{
+  background-image: url(../public/images/bar.webp);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* top: 0; */
+  /* left: 0; */
+  z-index: -1;
+  
+}
+
 .background {
   position: fixed;
   top: 0;

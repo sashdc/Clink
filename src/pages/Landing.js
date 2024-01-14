@@ -13,11 +13,11 @@ const Landing = () => {
 
   return (
     <div className="main-splash ">
-      <img
+      {/* <img
         className="background"
         src="../images/bar.webp"
         alt="a bar with bottles on the shelves lit with red neon bar sign"
-      />
+      /> */}
       <div className="main-nav animate__animated animate__fadeIn">
         <Link to="/Random" onClick={playSound}>
           <div className="main-tile tile-random">

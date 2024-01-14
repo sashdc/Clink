@@ -17,7 +17,7 @@ import Favourites from "./pages/Favourites";
 
 function App() {
   return (
-    <div>
+    <div className="background-img">
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
