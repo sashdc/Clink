@@ -8,10 +8,10 @@ import Search from "../components/Search";
 const Random = () => {
   return (
     <div>
-      <img
+     <img
         className="background"
         src="../images/bar.webp"
-        alt="bottles in a bar"
+        alt="a bar with bottles on the shelves lit with red neon bar sign"
       />
 
       <NavTabs />

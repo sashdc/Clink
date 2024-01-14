@@ -54,10 +54,10 @@
     /* height: 4rem; */
     /* width:4rem; */
     color: white;
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 400;
     opacity: 0.9;
-  text-align: center;
+    text-align: center;
     /* border: 2px solid transparent; */
     border-radius: 15px;
     /* transition: 0.4s; */
@@ -65,7 +65,7 @@
   }
   
 
-  #nav-btn:hover {
+  #nav-btn:hover, .active-page {
     transition: 0.4s;
     opacity: 1;
     scale: 0.9;

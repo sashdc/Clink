@@ -117,7 +117,7 @@ const Recipe = () => {
         <div className="recipe-cont">
           <div>
             <div
-              className="drink-card animate__animated animate__fadeInUp"
+              className="drink-card animate__animated animate__fadeInDown"
               ref={recipeCardRef}
             >
               <h1>{drink.strDrink}</h1>

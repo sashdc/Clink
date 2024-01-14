@@ -20,7 +20,7 @@ const Bar = () => {
 
   return (
     <div>
-    <img
+      <img
         className="background"
         src="../images/bar.webp"
         alt="a bar with bottles on the shelves lit with red neon bar sign"

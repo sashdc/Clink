@@ -50,6 +50,7 @@
 
 .main-tile {
   /* make circle backgroun using local pictures */
+  position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,17 +62,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   box-shadow: 0px 0px 30px 6px rgba(0, 0, 0);
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
   transition: 0.5s;
   border: 5px solid rgba(192, 192, 192, 0.742);
   z-index: 200;
 }
+
+.tile-title{
+  position: relative;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  /* add strip of background colour */
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  /* display: ; */
+  /* padding: 0.5rem; */
+  /* border-radius: 0 0 50% 50%;  */
+
+  }
 
 @keyframes clink {
   0% {
@@ -103,12 +115,12 @@
   }
 
   .main-tile {
-    font-size: 1.5em;
+    font-size: .8em;
     box-shadow: 0px -40px 30px 6px rgba(0, 0, 0, 0.6);
-
     height: 150px;
     width: 150px;
-    margin: 1rem;
+    margin: .8rem;
+    flex: 1;
   }
 
   .main-splash {
@@ -116,15 +128,14 @@
     flex-direction: column-reverse;
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
+    margin-top: 2.3rem;
   }
 
   .main-tile:hover {
     scale: .9;
     transition: 0.3s ease-in-out;
     box-shadow: 0px 0px 50px 15px rgba(0, 0, 0);
-
-   rotate: 0deg;
   }
   
 }

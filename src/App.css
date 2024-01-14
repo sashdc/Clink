@@ -15,6 +15,8 @@
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center center;
+
   z-index: -1;
   overflow: hidden;
 }
@@ -64,13 +66,14 @@ a:hover {
   }
 
   .background {
-    width: auto;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .background {
     position: fixed;
-    left: -50%;
+    top: 0;
+    left: auto;
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    overflow: hidden;
   }
 }

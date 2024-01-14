@@ -46,7 +46,7 @@ async function fetchFavoriteDrinkDetails(favorites) {
 function FavoriteDrinks() {
   const [favoriteDrinkDetails, setFavoriteDrinkDetails] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   const removeFavorite = async (id) => {
     let favorites = JSON.parse(localStorage.getItem("favourites")) || [];
     favorites = favorites.filter((favoriteId) => favoriteId !== id);
@@ -80,7 +80,7 @@ function FavoriteDrinks() {
 
   return (
     <div>
-     <img
+      <img
         className="background"
         src="../images/bar.webp"
         alt="bottles in a bar"
@@ -96,12 +96,14 @@ function FavoriteDrinks() {
             </div>
           ) : (
             <>
-            {favoriteDrinkDetails.length === 0 && ( 
-              <div className="no-favorites">
-                <h2>You have no favourite drinks yet</h2>
-                <p>Click the heart icon on a drink to add it to your favourites</p>
+              {favoriteDrinkDetails.length === 0 && (
+                <div className="no-favorites">
+                  <h2>You have no favourite drinks yet</h2>
+                  <p>
+                    Click the heart icon on a drink to add it to your favourites
+                  </p>
                 </div>
-                )}
+              )}
               {favoriteDrinkDetails.map((drink) => (
                 <div
                   key={drink.idDrink}
