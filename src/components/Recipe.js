@@ -22,6 +22,18 @@ const Recipe = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [drink, setDrink] = useState();
   const [favourites, setFavourites] = useState([]);
+  const [showImage, setShowImage] = useState(false);
+
+  useEffect(() => {
+    const delay = 800; // 1 second delay
+
+    const timeoutId = setTimeout(() => {
+      setShowImage(true);
+    }, delay);
+
+    // Cleanup the timeout to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []); // Empty dependency array to run the effect only once
 
   const recipeCardRef = useRef(null);
 
@@ -97,15 +109,15 @@ const Recipe = () => {
 
     return (
       <div className="recipe-page">
-         <img
-        className="background"
-        src="../images/bar.webp"
-        alt="a bar with bottles on the shelves lit with red neon bar sign"
-      />
+        <img
+          className="background"
+          src="../images/bar.webp"
+          alt="a bar with bottles on the shelves lit with red neon bar sign"
+        />
         <div className="recipe-cont">
           <div>
             <div
-              className="drink-card animate__animated animate__jackInTheBox"
+              className="drink-card animate__animated animate__fadeInUp"
               ref={recipeCardRef}
             >
               <h1>{drink.strDrink}</h1>
@@ -123,10 +135,12 @@ const Recipe = () => {
                 {drink.strCategory} ({drink.strAlcoholic})
               </h5>
               <img
-                className="drink-image animate__animated animate__jello"
+                className={`drink-image ${
+                  showImage ? "img-clear" : "img-blur"
+                }`}
                 src={drink.strDrinkThumb}
                 alt={drink.strDrink}
-              ></img>
+              />
               <br></br>
               <ul className="card-ingredients">
                 <b> {drink.strGlass}</b>
