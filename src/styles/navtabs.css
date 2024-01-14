@@ -4,7 +4,7 @@
   position: fixed;
   top: 1rem;
   left: 1rem;
-  width: 12em;
+  width: 10em;
 
   display: inline-block;
   z-index: 1;
@@ -25,7 +25,8 @@
   z-index: 1;
 }
 
-#nav-btn:hover, .active-page {
+#nav-btn:hover,
+.active-page {
   border-radius: 22px 22px 22px 22px;
   transition: 0.4s;
   opacity: 1;
@@ -35,7 +36,7 @@
 }
 
 /* media query for smaller screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .navtabs {
     display: flex;
     flex-direction: row;
@@ -44,7 +45,7 @@
     top: 2.8rem;
 
     left: 0;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   #nav-btn {
@@ -54,7 +55,7 @@
     /* height: 4rem; */
     /* width:4rem; */
     color: white;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 400;
     opacity: 0.9;
     text-align: center;
@@ -63,9 +64,9 @@
     /* transition: 0.4s; */
     z-index: 1;
   }
-  
 
-  #nav-btn:hover, .active-page {
+  #nav-btn:hover,
+  .active-page {
     transition: 0.4s;
     opacity: 1;
     scale: 0.9;

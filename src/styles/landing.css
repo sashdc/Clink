@@ -127,9 +127,9 @@
     background-position: center;
     flex-direction: column-reverse;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* height: 100vh; */
-    margin-top: 2.3rem;
+    margin-top: 5rem;
   }
 
   .main-tile:hover {

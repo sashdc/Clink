@@ -19,20 +19,26 @@
   /* top: 0; */
   /* left: 0; */
   z-index: -1;
-  
+  overflow-y: scroll;
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
+/* width */
+::-webkit-scrollbar {
+  width: 25px;
+}
 
-  z-index: -1;
-  overflow: hidden;
+/* Track */
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(111, 7, 7); 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f52929; 
 }
 
 a {
@@ -79,15 +85,8 @@ a:hover {
     width: 70%;
   }
 
-  .background {
-    position: fixed;
-    top: 0;
-    left: auto;
-    width: auto;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
-    overflow: hidden;
+  ::-webkit-scrollbar {
+    width: 5px;
   }
-}
+
+ }

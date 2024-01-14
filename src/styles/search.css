@@ -54,7 +54,7 @@ right: .1rem;
         cursor: zoom-in;
     }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 /* move search-form to bottom of screen on mobile */
 .search-cont{
     width: 100%;

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import '../styles/cocktailAlpha.css';
 import NavTabs from "../components/NavTabs";
-// import '../styles/grid.css'
 import Search from "../components/Search";
 
 const CocktailAlpha = () => {
@@ -19,11 +17,6 @@ const CocktailAlpha = () => {
 
   return (
     <div className="grid-page">
-      {/* <img
-        className="background"
-        src="../images/bar.webp"
-        alt="a bar with bottles on the shelves lit with red neon bar sign"
-      /> */}
       <NavTabs />
       <Search />
 
@@ -31,29 +24,33 @@ const CocktailAlpha = () => {
 
       <div className="">
         <ul className="grid-section">
-          {cocktails.map((cocktail) => (
-            <div className="grid-item animate__animated animate__bounceIn">
-              <Link to={`/${cocktail.strDrink}`}>
-                <img
-                  src={cocktail.strDrinkThumb}
-                  alt={cocktail.strDrink}
-                  className="rounded"
-                  height="200px"
-                />
-                {/* if drnk is alcoholic show cocktail, or mocktail if not */}
-                {cocktail.strAlcoholic === "Alcoholic" ? (
-                  <p className="cocktail-name">
-                    {cocktail.strDrink} (Cocktail)
-                  </p>
-                ) : (
-                  <p className="cocktail-name">
-                    {cocktail.strDrink} (Mocktail)
-                  </p>
-                )}
-                {/* <li key={cocktail.idDrink}>{cocktail.strDrink}({cocktail.strAlcoholic})</li> */}
-              </Link>
-            </div>
-          ))}
+          {!cocktails ? (
+            <Link to="/List">
+            <h2 className="no-results">Seems there are no drinks starting with the letter {letter}, click here to go back and try another one.</h2>
+            </Link>
+          ) : (
+            cocktails.map((cocktail) => (
+              <div className="grid-item animate__animated animate__bounceIn" key={cocktail.idDrink}>
+                <Link to={`/${cocktail.strDrink}`}>
+                  <img
+                    src={cocktail.strDrinkThumb}
+                    alt={cocktail.strDrink}
+                    className="rounded"
+                    height="200px"
+                  />
+                  {cocktail.strAlcoholic === "Alcoholic" ? (
+                    <p className="cocktail-name">
+                      {cocktail.strDrink} (Cocktail)
+                    </p>
+                  ) : (
+                    <p className="cocktail-name">
+                      {cocktail.strDrink} (Mocktail)
+                    </p>
+                  )}
+                </Link>
+              </div>
+            ))
+          )}
         </ul>
       </div>
     </div>

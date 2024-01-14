@@ -97,7 +97,7 @@ function FavoriteDrinks() {
           ) : (
             <>
               {favoriteDrinkDetails.length === 0 && (
-                <div className="no-favorites">
+                <div className="no-results">
                   <h2>You have no favourite drinks yet</h2>
                   <p>
                     Click the heart icon on a drink to add it to your favourites
