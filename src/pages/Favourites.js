@@ -80,11 +80,6 @@ function FavoriteDrinks() {
 
   return (
     <div>
-      {/* <img
-        className="background"
-        src="../images/bar.webp"
-        alt="bottles in a bar"
-      /> */}
       <div className="grid-page">
         <NavTabs />
         <Search />
@@ -117,8 +112,10 @@ function FavoriteDrinks() {
                     title="remove from favourites"
                     onClick={() => removeFavorite(drink.idDrink)}
                   />
-                  <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-                  <Link to={`/${drink.strDrink}`} key={drink.idDrink}>
+
+                  {/* Wrap the image and text inside the Link component */}
+                  <Link to={`/${drink.strDrink}`}>
+                    <img src={drink.strDrinkThumb} alt={drink.strDrink} />
                     <h2>{drink.strDrink}</h2>
                   </Link>
                 </div>

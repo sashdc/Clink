@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import '../styles/cocktailAlpha.css';
-// import NavTabs from "../components/NavTabs";
 import "../styles/grid.css";
-// import Search from "../components/Search";
 
 const SearchResults = () => {
   const [cocktailsIngredient, setCocktails] = useState([]);
@@ -25,8 +22,6 @@ const SearchResults = () => {
     <>
       {cocktailsIngredient.length > 0 ? (
         <div className="grid-page">
-          {/* <img className="background" src="../images/bottles.jpg" alt='bottles in a bar'/> */}
-
           <h1 className="section-heading">
             Results with {searchTerm} as an ingredient
           </h1>
