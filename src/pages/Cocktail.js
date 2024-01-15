@@ -13,11 +13,6 @@ const Cocktail = () => {
   return (
     <div>
       <Search />
-      <img
-        className="background"
-        src="./images/pour.jpg"
-        alt="a drink being poured at a bar"
-      />
 
       <NavTabs />
 

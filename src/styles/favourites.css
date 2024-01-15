@@ -78,3 +78,23 @@
 .no-results{
   color: #bbbbbb7b;
 }
+
+/* media queries */
+@media screen and (max-width: 768px) {
+ .fav-card{
+    width: 80px;
+    border-radius: 5px;
+  padding: 4px;
+  margin: 5px;
+ }
+  .fav-card h2{
+    font-size: .8rem;
+    margin: .1rem 0 0 0;
+
+  }
+
+  .fav-container {
+    justify-content: space-around;
+}
+
+}
