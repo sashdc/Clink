@@ -12,34 +12,31 @@ const Landing = () => {
   };
 
   return (
+    <div className="landing">
     <div className="main-splash ">
-      {/* <img
-        className="background"
-        src="../images/bar.webp"
-        alt="a bar with bottles on the shelves lit with red neon bar sign"
-      /> */}
-      <div className="main-nav animate__animated animate__fadeIn">
+        <div className="main-nav animate__animated animate__fadeIn">
         <Link to="/Random" onClick={playSound}>
           <div className="main-tile tile-random">
-            <h2 className="tile-title">Random</h2>
+          <h2 className="tile-title">Random</h2>
+            <img className="tile-img" src="../images/cocktail.webp" alt="random" />
           </div>
         </Link>
         <Link to="/List" onClick={playSound}>
-          <div className="main-tile tile-list">
-            {" "}
-            <h2 className="tile-title">A-Z</h2>
+        <div className="main-tile tile-list">
+          <h2 className="tile-title">A-Z</h2>
+            <img className="tile-img" src="../images/cocktails.webp" alt="list" />
           </div>
         </Link>
         <Link to="/Bar" onClick={playSound}>
-          <div className="main-tile tile-bar">
-            {" "}
-            <h2 className="tile-title">Bar</h2>
+        <div className="main-tile tile-bar">
+          <h2 className="tile-title">Bar</h2>
+            <img className="tile-img" src="../images/bottles.webp" alt="bar" />
           </div>
         </Link>
         <Link to="/Favourites" onClick={playSound}>
-          <div className="main-tile tile-fav">
-            {" "}
-            <h2 className="tile-title">Favourites</h2>
+        <div className="main-tile tile-fav">
+          <h2 className="tile-title">Random</h2>
+            <img className="tile-img" src="../images/fav.webp" alt="favourites" />
           </div>
         </Link>
       </div>
@@ -47,6 +44,7 @@ const Landing = () => {
       <div className="main-title">
         <h1 className="main-title-text">CLiNK</h1>
       </div>
+    </div>
     </div>
   );
 };
