@@ -129,7 +129,8 @@
     position: relative;
     /* overflow: hidden; */
     /* height: 100vh; */
-    margin-top: 5rem;
+    margin-top: 30%;
+    
   }
 
   .main-tile:hover {
