@@ -20,11 +20,11 @@ const Bar = () => {
 
   return (
     <div>
-      <img
+      {/* <img
         className="background"
-        src="./images/bottles.jpg"
-        alt="bottles behind a bar"
-      />
+        src="../images/bar.webp"
+        alt="a bar with bottles on the shelves lit with red neon bar sign"
+      /> */}
 
       <div className="grid-page">
         <NavTabs />

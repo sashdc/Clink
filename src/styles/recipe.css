@@ -1,101 +1,104 @@
-.recipe-page{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    /* background-image: url(../../public/images/pour.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* backdrop-filter: blur(5px); */
-    /* position: fixed; */
-    margin-top: 2.5rem;
+.recipe-page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url(../../public/images/pour.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* backdrop-filter: blur(5px); */
+  /* position: fixed; */
+  margin-top: 2.5rem;
 }
 
-.loading{
-    color: aliceblue;
-    font-size: 2rem;
-    margin: 2rem;
-    background-color: #242424;
-    padding: 1rem;
+.loading {
+  color: aliceblue;
+  font-size: 2rem;
+  margin: 2rem;
+  background-color: #242424;
+  padding: 1rem;
 }
 
-.unfave-heart, .fave-heart{
-    font-size: 2rem;
-    /* margin: 1rem; */
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 2px;
-    right: 2px
+.unfave-heart,
+.fave-heart {
+  font-size: 2rem;
+  /* margin: 1rem; */
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 
-.unfave-heart:hover, .fave-heart:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
+.unfave-heart:hover,
+.fave-heart:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
-
-.unfave-heart:active, .fave-heart:active{
-    transform: scale(.7);
-    transition: 0.3s;
+.unfave-heart:active,
+.fave-heart:active {
+  transform: scale(0.7);
+  transition: 0.3s;
 }
 
-.unfave-heart{
-    color: #e10101;
-
+.unfave-heart {
+  color: #e10101;
 }
 
-.fave-heart{
-    color: #7a0505;
+.fave-heart {
+  color: #7a0505;
 }
 
-
-.instructions-list{
-    list-style-type:circle;
-    list-style-position: inside;
-           padding-left:0
+.instructions-list {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-left: 0;
 }
 
-
-.drink-card{
-    width: 25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* margin: 2rem auto; */
-    /* transition: all 0.3s ease-in-out; */
-    text-align: center;
-    background-color: rgb(221, 207, 207);
-    padding: 1rem;
-    border: 3px solid rgba(126, 126, 126, 0.468);
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
-    height: 100%;
-    /* margin: 1rem; */
-}
-.drink-card h1{
-    font-size: 2rem;
-    /* margin: 1rem; */
+.img-blur {
+  filter: blur(30px);
 }
 
-.card-ingredients{
-    list-style-type : none;
-    margin: 1rem;
-    padding: 0;
+.drink-card {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 2rem auto; */
+  /* transition: all 0.3s ease-in-out; */
+  text-align: center;
+  background-color: rgb(221, 207, 207);
+  padding: 1rem;
+  border: 3px solid rgba(126, 126, 126, 0.468);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  height: 100%;
+  /* margin: 1rem; */
+}
+.drink-card h1 {
+  font-size: 2rem;
+  /* margin: 1rem; */
 }
 
-.drink-card img{
-    height: 22rem;
-    border-radius: 22rem;
-    transition: 1s ;
-    box-shadow: 4px 6px 2rem 20px rgba(0,0,0,0.2);
+.card-ingredients {
+  list-style-type: none;
+  margin: 1rem;
+  padding: 0;
 }
 
-.save-jpeg{
-    display: inline-block;
-    margin: 1rem 0;
+.drink-card img {
+  height: 22rem;
+  border-radius: 22rem;
+  transition: 1s;
+  box-shadow: 4px 6px 2rem 20px rgba(0, 0, 0, 0.2);
+}
+
+.save-jpeg {
+  display: inline-block;
+  margin: 1rem 0;
   padding: 10px 20px;
   background-color: #9c9c9c;
   color: #fff;
@@ -106,30 +109,29 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s;
 }
-.save-jpeg:hover{
-    background-color: #242424;
-
+.save-jpeg:hover {
+  background-color: #242424;
 }
 
-.drink-image:hover{
-    border-radius: 8rem;
-    transition: 0.4s ;
-    box-shadow: 0 0 2rem 0 rgba(0,0,0,0.2);
+.drink-image:hover {
+  border-radius: 8rem;
+  transition: 0.4s;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
 }
 
 /* media query for smaller screens */
-@media screen and (max-width: 768px){
-    .drink-card{
-        width: 20rem;
-        margin-top: 0rem;
-        margin-bottom: 0rem;
-    }
-    .recipe-cont{
-        margin-top: 3rem;
-        margin-bottom: 0rem;
-    }
-    
-    .drink-card img{
-        height: 18rem;
-    }
+@media screen and (max-width: 768px) {
+  .drink-card {
+    width: 20rem;
+    margin-top: .5rem;
+    margin-bottom: 0rem;
+  }
+  .recipe-cont {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .drink-card img {
+    height: 18rem;
+  }
 }

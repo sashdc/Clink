@@ -12,23 +12,35 @@ const Landing = () => {
   };
 
   return (
-    <div className="main-splash animate__animated animate__fadeIn">
-      {/* <img className="background" src="./images/bar.jpg" /> */}
-
-      {/* search bar */}
-
-      <div className="main-nav">
+    <div className="main-splash ">
+      {/* <img
+        className="background"
+        src="../images/bar.webp"
+        alt="a bar with bottles on the shelves lit with red neon bar sign"
+      /> */}
+      <div className="main-nav animate__animated animate__fadeIn">
         <Link to="/Random" onClick={playSound}>
-          <h2 className="main-tile tile-random">Random</h2>
+          <div className="main-tile tile-random">
+            <h2 className="tile-title">Random</h2>
+          </div>
         </Link>
         <Link to="/List" onClick={playSound}>
-          <h2 className="main-tile tile-list">A-Z</h2>
+          <div className="main-tile tile-list">
+            {" "}
+            <h2 className="tile-title">A-Z</h2>
+          </div>
         </Link>
         <Link to="/Bar" onClick={playSound}>
-          <h2 className="main-tile tile-bar">Bar</h2>
+          <div className="main-tile tile-bar">
+            {" "}
+            <h2 className="tile-title">Bar</h2>
+          </div>
         </Link>
         <Link to="/Favourites" onClick={playSound}>
-          <h2 className="main-tile tile-fav">Favourites</h2>
+          <div className="main-tile tile-fav">
+            {" "}
+            <h2 className="tile-title">Favourites</h2>
+          </div>
         </Link>
       </div>
       <Search />
