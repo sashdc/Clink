@@ -1,74 +1,71 @@
-.search-cont{
-width: 100%;
-display: flex;
-justify-content: flex-end;
-position: fixed;
-top: 1rem;
-right: .1rem;
-
+.search-cont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 1rem;
+  right: 0.1rem;
 }
 
-.search-form{
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    scale: .9;
-    transition: all 0.7s ;
-    
-    }
-
-.search-input{
-    margin: 0;
-    padding: 0;
-    width: fit-content;
-    max-width: 400px;
-    height: 40px;
-    background: #fff;
-    border-radius: 20px;
-    transition: .8s;
-    font-size: 1rem;
-
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 0.9;
+  transition: all 0.7s;
 }
 
+.search-input {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  max-width: 400px;
+  height: 40px;
+  background: #fff;
+  border-radius: 20px;
+  transition: 0.8s;
+  font-size: 1rem;
+}
 
-     .search-input:focus, .search-form:hover .search-form{
-       scale: 1.2;
-       transition: all 0.4s ;
-       translate: -30px;
-        } 
+.search-input:focus,
+.search-form:hover .search-form {
+  scale: 1.2;
+  transition: all 0.4s;
+  translate: -30px;
+}
 
-.search-button{
-    width: 20px;
-    height: 20px;
-    background: #006e00;
-    border-radius: 50%;
-    /* border: 1px solid #ccc; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    }
+.search-button {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+  background: #006e00;
+  border-radius: 50%;
+  /* border: 1px solid #ccc; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
 
-    .search-button:hover{
-        background: #74e274;
-        cursor: zoom-in;
-    }
+.search-button:hover {
+  background: #74e274;
+  cursor: zoom-in;
+}
 
 @media screen and (max-width: 768px) {
-/* move search-form to bottom of screen on mobile */
-.search-cont{
+  /* move search-form to bottom of screen on mobile */
+  .search-cont {
     width: 100%;
     display: flex;
     /* align-items: flex-end; */
     justify-content: center;
     position: fixed;
     z-index: 1;
-    top: 0.25rem  ;
-
-    }
-    .search-input:focus, .search-form:hover .search-form{
-        scale: 1;
-        translate: 0px;
-         } 
-  
+    top: 0.25rem;
+  }
+  .search-input:focus,
+  .search-form:hover .search-form {
+    scale: 1;
+    translate: 0px;
+  }
 }

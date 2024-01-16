@@ -109,9 +109,7 @@ const Recipe = () => {
 
     return (
       <div className="recipe-page">
-   
         <div className="recipe-cont">
-          <div>
             <div
               className="drink-card animate__animated animate__fadeInDown"
               ref={recipeCardRef}
@@ -150,7 +148,6 @@ const Recipe = () => {
                 ))}
               </ul>
             </div>
-          </div>
           <button className="save-jpeg" onClick={saveRecipeCardAsJpeg}>
             Save to device
           </button>

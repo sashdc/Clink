@@ -20,7 +20,6 @@
 .unfave-heart,
 .fave-heart {
   font-size: 2rem;
-  /* margin: 1rem; */
   cursor: pointer;
   transition: 0.3s;
   position: absolute;
