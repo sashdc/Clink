@@ -35,7 +35,7 @@ const Landing = () => {
         </Link>
         <Link to="/Favourites" onClick={playSound}>
         <div className="main-tile tile-fav">
-          <h2 className="tile-title">Random</h2>
+          <h2 className="tile-title">Favourites</h2>
             <img className="tile-img" src="../images/fav.webp" alt="favourites" />
           </div>
         </Link>
