@@ -110,44 +110,42 @@ const Recipe = () => {
     return (
       <div className="recipe-page">
         <div className="recipe-cont">
-            <div
-              className="drink-card animate__animated animate__fadeInDown"
-              ref={recipeCardRef}
-            >
-              <h1>{drink.strDrink}</h1>
-              <FavoriteButton
-                isFavorited={favourites.includes(drink.idDrink)}
-                onFavoriteToggle={() => {
-                  if (favourites.includes(drink.idDrink)) {
-                    removeRecipeCardFromFav();
-                  } else {
-                    saveRecipeCardAsFav();
-                  }
-                }}
-              />
-              <h5>
-                {drink.strCategory} ({drink.strAlcoholic})
-              </h5>
-              <img
-                className={`drink-image ${
-                  showImage ? "img-clear" : "img-blur"
-                }`}
-                src={drink.strDrinkThumb}
-                alt={drink.strDrink}
-              />
-              <br></br>
-              <ul className="card-ingredients">
-                <b> {drink.strGlass}</b>
-                {ingredients.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-                ))}
-              </ul>
-              <ul className="instructions-list">
-                {instructionsList.map((sentence, index) => (
-                  <li key={index}>{sentence}</li>
-                ))}
-              </ul>
-            </div>
+          <div
+            className="drink-card animate__animated animate__fadeInDown"
+            ref={recipeCardRef}
+          >
+            <h1>{drink.strDrink}</h1>
+            <FavoriteButton
+              isFavorited={favourites.includes(drink.idDrink)}
+              onFavoriteToggle={() => {
+                if (favourites.includes(drink.idDrink)) {
+                  removeRecipeCardFromFav();
+                } else {
+                  saveRecipeCardAsFav();
+                }
+              }}
+            />
+            <h5>
+              {drink.strCategory} ({drink.strAlcoholic})
+            </h5>
+            <img
+              className={`drink-image ${showImage ? "img-clear" : "img-blur"}`}
+              src={drink.strDrinkThumb}
+              alt={drink.strDrink}
+            />
+            <br></br>
+            <ul className="card-ingredients">
+              <b> {drink.strGlass}</b>
+              {ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+            <ul className="instructions-list">
+              {instructionsList.map((sentence, index) => (
+                <li key={index}>{sentence}</li>
+              ))}
+            </ul>
+          </div>
           <button className="save-jpeg" onClick={saveRecipeCardAsJpeg}>
             Save to device
           </button>
