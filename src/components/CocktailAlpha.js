@@ -35,6 +35,7 @@ const CocktailAlpha = () => {
                   <img
                     src={cocktail.strDrinkThumb}
                     alt={cocktail.strDrink}
+                    key = {cocktail.idDrink}
                     className="rounded"
                     height="200px"
                   />

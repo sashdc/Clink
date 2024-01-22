@@ -11,12 +11,12 @@ const Recipe = () => {
   const page = location.pathname;
 
   // Set up apiUrl based on the page
-  let apiUrl;
-  if (page === "/Random") {
-    apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-  } else {
-    apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
-  }
+  // let apiUrl;
+  // if (page === "/Random") {
+  //   apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+  // } else {
+  //   apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+  // }
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,33 +24,57 @@ const Recipe = () => {
   const [favourites, setFavourites] = useState([]);
   const [showImage, setShowImage] = useState(false);
 
-  useEffect(() => {
-    const delay = 800; // 1 second delay
+    useEffect(() => {
+      const delay = 800; // 1 second delay
 
-    const timeoutId = setTimeout(() => {
-      setShowImage(true);
-    }, delay);
+      const timeoutId = setTimeout(() => {
+        setShowImage(true);
+      }, delay);
 
-    // Cleanup the timeout to avoid memory leaks
-    return () => clearTimeout(timeoutId);
-  }, []); // Empty dependency array to run the effect only once
+      // Cleanup the timeout to avoid memory leaks
+      return () => clearTimeout(timeoutId);
+    }, []); // Empty dependency array to run the effect only once
 
   const recipeCardRef = useRef(null);
-
   useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setDrink(result.drinks[0]);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
+    // Set up apiUrl based on the page
+    let apiUrl;
+    if (page === "/Random") {
+      apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+    } else {
+      apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+    }
+  
+    // Create an AbortController to be able to cancel the fetch request
+    const abortController = new AbortController();
+    const { signal } = abortController;
+  
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl, { signal });
+        const result = await response.json();
+        console.log(result);
+        setIsLoaded(true);
+        setDrink(result.drinks[0]);
+      } catch (error) {
+        if (error.name === 'AbortError') {
+          // Ignore abort errors, as they are intentional cancellations
+          return;
         }
-      );
-  }, [apiUrl]);
+        setIsLoaded(true);
+        setError(error);
+      }
+    };
+  
+    fetchData();
+  
+    // Cleanup function to cancel the fetch request if the component is unmounted
+    return () => {
+      abortController.abort();
+      // Additional cleanup logic if needed
+    };
+  }, []); // Empty dependency array for mounting effect
+  
 
   useEffect(() => {
     const storedFavorites =
