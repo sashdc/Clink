@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/navtabs.css";
 
-const NavTabs = () => {
+const NavTabs = ({ onReloadRecipe }) => {
   const location = useLocation();
   const page = location.pathname;
-
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
   useEffect(() => {
@@ -49,12 +48,11 @@ const NavTabs = () => {
       </Link>
       {/* renders random again button when on random page, and random button otherwise */}
       {page === "/Random" ? (
-        <Link to="/Random" onClick={() => window.location.reload()}>
-          {" "}
-          <h2 id="nav-btn" className={page === "/Random" ? "active-page" : ""}>
-            {!isSmallScreen ? "Random Again" : "Random"}
-          </h2>
-        </Link>
+         <Link to="/Random" onClick={onReloadRecipe}>
+         <h2 id="nav-btn" className={page === "/Random" ? "active-page" : ""}>
+           {!isSmallScreen ? "Random Again" : "Random"}
+         </h2>
+       </Link>
       ) : (
         <Link to="/Random">
           {" "}
