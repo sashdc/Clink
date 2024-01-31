@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+#root{
+  background-color: rgb(106, 5, 5);
+}
+
 .background-img{
   background-image: url(../public/images/bar.webp);
   background-size: cover;

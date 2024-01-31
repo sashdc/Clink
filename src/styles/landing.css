@@ -13,7 +13,6 @@
 }
 
 .main-splash {
-  /* background: url(../../public/images/bar.webp) no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,7 +26,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* z-index: -1; */
 }
 
 .main-title-text {
@@ -57,11 +55,12 @@
   left: 0;
   z-index: -1;
   transition: 0.5s ease-in-out;
+  filter: blur(1px);
 }
 
 .main-tile:hover .tile-img {
   transition: 0.5s ease-in-out;
-  filter: blur(1px);
+  filter: blur(0px);
 }
 
 .tile-list {
@@ -77,12 +76,10 @@
 }
 
 .main-tile {
-  /* make circle backgroun using local pictures */
   position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  /* background-size: contain; */
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -90,9 +87,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* text-align: center; */
   box-shadow: 0px 0px 30px 6px var(--box-glow);
-  /* text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9); */
   transition: 0.5s;
   border: 14px solid var(--border-color);
   z-index: 200;
@@ -105,16 +100,13 @@
   color: var(--text-color);
   font-size: 2em;
   font-weight: bold;
-  /* text-shadow: 0px 0px 35px rgb(0, 0, 0); */
-  /* -webkit-text-stroke: 1px black; */
   margin-bottom: 0;
 }
 
 .title-bar {
   background-color: var(--border-color);
   width: 100%;
-  border-radius: 2px;
-  z-index: 10;
+
 }
 
 @keyframes clink {

@@ -3,7 +3,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* flex-wrap: wrap; */
     }
 
     .grid-section {
@@ -15,31 +14,24 @@
         /* make half transparent background */
         background-color: rgba(0, 0, 0, 0.8);
         border-radius: 10px;
-        /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
-        /* grid-gap: 10px; */
         padding: 20px;
         /* move to centre of screen */
         margin: auto;
         margin-bottom: 2rem;
-        /* list-style-type: none; */
     }
 
     .grid-item {
         /* make circle backgroun using local pictures */
-        /* height: 200px; */
         transition: .4s;
         padding: 1rem
     }
 
-/* .grid-item img{
-    height: auto;
-} */
+
 
     .grid-item:hover {
-        scale: 1.4;
+        scale: 1.2;
         transition: .4s ease-in-out;
         background-color: rgba(0, 0, 0, 0.9);
-        /* border: 5px white solid; */
         border-radius: 10%;
         z-index: 200;
     }
